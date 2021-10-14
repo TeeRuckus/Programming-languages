@@ -1,0 +1,6 @@
+Enter the amount of times which you want to run the programme: 
+
+5         print (("Running fizz  buzz times of ", times));
+          -                                               
+Terminate a68g (yes|no): Terminate a68g (yes|no): Terminate a68g (yes|no): 
+Terminate a68g (yes|no): Terminate a68g (yes|no): Terminate a68g (yes|no): Terminate a68g (yes|no): Terminate a68g (yes|no): Terminate a68g (yes|no): Terminate a68g (yes|no): Terminate a68g (yes|no): Terminate a68g (yes|no): Terminate a68g (yes|no): Terminate a68g (yes|no): 

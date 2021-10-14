@@ -1,0 +1,21 @@
+BEGIN 
+    print (("Enter the amount of times which you want to run the programme: "));
+    INT times = read int;
+
+    print (("Running fizz  buzz times of ", times));
+    print ((" ", new line));
+
+    FOR ii FROM 1 TO times DO 
+        IF ((ii MOD 15) = 0) THEN
+            print(("Fizz buzz", new line))
+
+        ELIF ((ii MOD 5) = 0) THEN 
+            print(("buzz", new line))
+
+        ELIF ((ii MOD 3) = 0) THEN
+            print(("Fizz", new line))
+        ELSE 
+            print((ii, new line))
+        FI
+    OD
+END
