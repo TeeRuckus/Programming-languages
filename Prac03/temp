@@ -1,0 +1,13 @@
+I am going to have some back up code in here just in case my other doesn't work for here
+    -- going through the whole enitre array, and this is going to be the cursor
+    -- which is going to be infront
+    for ii in size loop
+        Put_Line ("Hello world");
+        --this is going to be the cursor which is going to be behind and doin
+        --the comparison for the sorting algorithm
+        for jj  in size loop
+            Put_Line("lagging begind the programme");
+        end loop;
+
+    end loop;
+    New_Line; 
