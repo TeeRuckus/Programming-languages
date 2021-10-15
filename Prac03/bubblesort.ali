@@ -6,7 +6,7 @@ RN
 RV NO_IO
 RV SPARK_05
 
-U bubblesort%b		bubblesort.adb		c2483019 NE OO SU IL
+U bubblesort%b		bubblesort.adb		c91b1120 NE OO SU IL
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 
@@ -17,7 +17,7 @@ D a-stream.ads		20200312110721 119b8fb3 ada.streams%s
 D a-tags.ads		20200312110721 491b781d ada.tags%s
 D a-textio.ads		20200312110721 881db35a ada.text_io%s
 D a-unccon.ads		20200312110721 0e9b276f ada.unchecked_conversion%s
-D bubblesort.adb	20211015115800 4a558343 bubblesort%b
+D bubblesort.adb	20211015123313 4106a27a bubblesort%b
 D interfac.ads		20200312110721 5ab55268 interfaces%s
 D i-cstrea.ads		20200312110721 e53d8b8e interfaces.c_streams%s
 D system.ads		20200312110721 4635ec04 system%s
@@ -37,18 +37,19 @@ X 1 ada.ads
 16K9*Ada 20e8 8|1r6 2r5
 X 6 a-textio.ads
 49K13*Text_IO 471e16 8|1w10 2r9
-263U14*Put_Line 8|20s5
+263U14*Put_Line 8|24s5 32s13
 X 8 bubblesort.adb
-5U11*bubblesort 5b11 33l5 33t15
-7I10 My_Int<short_integer> 14r38
-9I10 size<short_short_integer> 14r29
-11i5 end_sort{integer} 26r47 27r51
-12i5 beginning_sort{integer} 26r29 27r33
-14A11 myArray(7I10)<9I10> 16r11
-16a5 Arr{14A11}
-18U11 swap 18b11 18>16 18>38 21l5 21t9 28s13
-18i16 firstValue{integer}
-18i38 endValue{integer}
-26i9 ii{integer}
-27i13 jj{integer}
+5U11*bubblesort 5b11 36l5 36t15
+7I10 My_Int<short_integer>
+9I10 size<short_short_integer>
+11i5 end_sort{integer} 30r47 31r51
+12i5 beginning_sort{integer} 30r29 31r33
+14A11 myArray(integer)<integer> 16r16 18r46
+16a5 elements{14A11} 29r13
+18U11 swap 18b11 18>16 18>33 25l5 25t9 29s5
+18i16 index{integer} 21r21
+18a33 inArray{14A11} 21r13
+19i5 temp{integer} 21m5
+30i9 ii{integer}
+31i13 jj{integer}
 
