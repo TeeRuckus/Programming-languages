@@ -1,21 +1,22 @@
-using namespace std;
+#include <string>
+#include <cstdlib>
+#include <iostream>
+#include "Book.h"
 
-class Book
+//default constructors 
+Book::Book()
 {
-    private:
-        int bookID;
-        std::string bookName;
-        std::string ISBN;
+    bookID  = 1;
+    bookName = "Discourses and Selected - Epictectus";
+    ISBN = "12345";
+}
 
-    public:
-        int GetBookID();
-        std::string GetBookName();
-        std::string GetISBN();
+//alternate constructors
+Book::Book(int inBookID, std::string inBookName, std::string inISBN)
+{
+    bookID = inBookID;
+    bookName = inBookName;
+    ISBN = inISBN;
+}
 
-        void SetBookID(int);
-        void setBookName(std::string);
-        void SetBookISBN(std::string);
-
-        Book();
-        ~Book();
-};
+//actually functions for this class
