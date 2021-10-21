@@ -4,14 +4,18 @@ class Book
         int bookID;
         std::string bookName;
         std::string ISBN;
+        bool validateIntegerInput(int);
+        bool validateName(std::string);
 
     public:
-        int GetBookID();
-        std::string GetBookName();
-        std::string GetISBN();
+        Book();
+        Book(int, std::string, std::string);
+        int getBookID();
+        std::string getBookName();
+        std::string getISBN();
 
-        void SetBookID(int);
+        void setBookID(int);
         void setBookName(std::string);
-        void SetBookISBN(std::string);
+        void setBookISBN(std::string);
         ~Book();
 };
