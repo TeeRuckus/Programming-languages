@@ -1,3 +1,7 @@
+#include <string>
+#include <cstdlib>
+#include <iostream>
+
 class Book
 {
     private:

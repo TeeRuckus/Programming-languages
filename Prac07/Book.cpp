@@ -1,7 +1,3 @@
-#include <string>
-#include <cstdlib>
-#include <iostream>
-
 #include "Book.h"
 
 //default constructors 
