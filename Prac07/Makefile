@@ -15,7 +15,7 @@ $(EXEC) : $(OBJ)
 Book.o : Book.cpp Book.h
 	$(CC) $(CFLAGS) -c Book.cpp
 
-quickSort.o : quickSort.cpp
+quickSort.o : quickSort.cpp quickSort.h
 	$(CC) $(CFLAGS) -c quickSort.cpp
 
 clean:
