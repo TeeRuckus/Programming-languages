@@ -70,9 +70,21 @@ void quickSort(Book* inBooks[], int inSize)
     int rightIndx = inSize;
 }
 
+//ASSERTS: will bookOne with bookTwo in the current books of arrays
 void swap(Book* bookOne, Book* bookTwo)
 {
     Book temp = *bookOne;
     *bookOne = *bookTwo;
     *bookTwo = temp;
+}
+
+
+/*PURPOSE: this is going to be represent the partioning process in the quick
+sort algorithm. Whereby it's going to all the elements which are less than
+the selected pivot on the right of the pivot, and all elements bigger than
+the pivot on the right side of the array*/
+int  doPartition(Book* inBooks[], int leftIndx, int rightIndx)
+{
+//this is the tutorial which you were following 
+//https://www.geeksforgeeks.org/cpp-program-for-quicksort/
 }
