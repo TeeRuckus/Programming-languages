@@ -1,0 +1,332 @@
+\documentclass[
+	12pt, % Default font size, values between 10pt-12pt are allowed
+	%letterpaper, % Uncomment for US letter paper size
+	%spanish, % Uncomment for Spanish
+]{fphw}
+
+% Template-specific packages
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{mathpazo} % Use the Palatino font
+\usepackage{graphicx} % Required for including images
+\usepackage{subfig}
+\graphicspath{{figures/}}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs} % Required for better horizontal rules in tables
+\usepackage{listings} % Required for insertion of code
+\usepackage{enumerate} % To modify the enumerate environment
+\usepackage[section]{placeins}
+\usepackage{wrapfig}
+\usepackage{pdfpages}
+\usepackage[section]{placeins}
+\usepackage{flafter}
+%trying to do referencing using Chicago style
+%NEW SHIT HERE
+\usepackage{appendix}
+%delete after, this is to place dummy text on the page
+\usepackage[english]{babel}
+\usepackage{setspace}
+\usepackage{csquotes}
+%how to use this package. Do your code snippets last, as you need to move the .m file into
+%the same directory as this tex file
+
+%adding a box around my imported latex code
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}\lstset{frame=single, rulesepcolor=\color{black}, numbers=left}
+
+\lstset{language=Matlab,%
+    %basicstyle=\color{red},
+    breaklines=true,%
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    emph=[2]{word1,word2}, emphstyle=[2]{style},
+}
+
+\usepackage[authordate]{biblatex-chicago}
+\DeclareFieldFormat[article]{title}{\mkbibquote{#1}} % make article titles in quotes
+\DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}} % make theses italics
+\bibliography{dynamic and modelling design assignment}
+
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+\counterwithin*{equation}{subsubsection}
+
+%CHANGE
+%I want to save space when I am writing my document, so I am going to have
+%everything as the default values for the system
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{1.5em}
+%\onehalfspacing
+%\setstretch{1.25}
+%making a variable for where all my results are going to be stored
+\newcommand\pathFiles{"summary/"}
+%----------------------------------------------------------------------------------------
+%	ASSIGNMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Dynamics and Modelling Design assignment} % Assignment title
+\author{Tawana Kwaramba: 19476700} % Student name
+\date{May 23rd, 2021} % Due date
+\institute{Curtin University \\ Faculty of Science and Engineering: School of Civil and Mechanical Engineering} % Institute or school name
+\class{Dynamic Modelling and Control - MXEN3004} % Course or class name
+\professor{Fabrizio Padula, and Lorenzo Ntogramatzidis}
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+%\newpage
+\listoftables
+\newpage
+%\end{spacing}
+\pagenumbering{arabic}
+%----------------------------------------------------------------------------------------
+%	Dynamics and modelling report
+%----------------------------------------------------------------------------------------
+%NEW SHIT HERE TOO
+%\nocite{*} %this cases everything I your bibliography to be cited regardless if
+%it has been used or not
+%\section{Introduction}
+%\begin{itemize}
+%    \item tall about what the task is, and what you're aiming to do with the task
+%    \item summarise your findings in a succinct manner
+%    \item discusses some of the methods which you have used to get your result
+%\end{itemize}
+
+%=========================================================================
+\section{Introduction}
+The report aims to outline the procedure which was taken to produce a feedback system, that corresponds to the classical control feedback interconnection as outlined on page 9, example 5, lecture 5 block diagrams (\cite{interconnections}). The final controller must meet the criterion outlined in the design document (\cite{ass}).
+
+\section{Summary of results}
+
+\begin{figure}[!htb]
+  \centering
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{\pathFiles  "student response.png"}
+    \caption{First order plus dead time model, and generated step response}
+    \label{FOPDT}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{\pathFiles  "margin plots.png"}
+    \caption{Bode plots of all controllers}
+    \label{margin plots}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[!htb]
+  \centering
+  \begin{minipage}[b]{0.45\textwidth}
+      \includegraphics[width=\textwidth]{\pathFiles "step responses.png"}
+    \caption{Step response reference signals of all controllers}
+    \label{step}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{\pathFiles "step error.png"}
+    \caption{Step response error signals of all controllers}
+    \label{step err}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[!htb]
+  \centering
+  \begin{minipage}[b]{0.45\textwidth}
+      \includegraphics[width=\textwidth]{\pathFiles "ramp reference.png"}
+    \caption{Ramp reference signals of all controllers}
+    \label{ramp}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\textwidth}
+      \includegraphics[width=\textwidth]{\pathFiles "ramp error.png"}
+    \caption{Ramp tracking error of all controllers}
+    \label{ramp err}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[!htb]
+  \centering
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{\pathFiles "transient noise.png"}
+    \caption{Transient noise of all controllers}
+    \label{transient}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{\pathFiles "steady state.png"}
+    \caption{Steady state response to noise}
+    \label{steady state}
+    \end{minipage}
+\end{figure}
+
+
+\begin{table}[!htb]
+\parbox{.45\linewidth}{
+\centering
+    \scalebox{0.9}{
+    \begin{tabular}[t]{ c  c  c  c } \toprule
+        \multicolumn{4}{c}{\textbf{Summary: numerical values}} \\ \toprule
+        \textbf{Condition} & \textbf{Integral} & \textbf{PI} & \textbf{PI Filtered } \\ \hline
+        $e_{r} < 3 \tau R$ & True & True & True \\ \midrule
+        $noise < \frac{1}{1000}$ & True & False & True \\ \midrule
+        $R$ & 0.9998 & 0.9996 & 0.9997\\ \bottomrule
+    \end{tabular}}
+    \caption{Summary of numerical calculations for satisfying conditions}
+    \label{conditions}
+}
+\hfill
+\parbox{.45\linewidth}{
+\centering
+    \scalebox{0.9}{
+    \begin{tabular}[t]{ c  c  c  c} \toprule
+        \multicolumn{4}{c}{\textbf{Summary: bode plot values}} \\ \toprule
+        \textbf{Controller} & \textbf{Phase margin} & \textbf{Frequency} & \textbf{Stable} \\ \hline
+        Integral& 25.7057 & 10.0193 & True \\ \hline
+        PI& 77.9989 & 10.0196 & True \\ \hline
+        Filtered PI& 69.0461 & 9.7686 & True \\ \bottomrule
+    \end{tabular}}
+    \caption{Numerical values for the Bode plot}
+    \label{Bode}
+}
+\end{table}
+
+\begin{figure}[!htb]
+	\begin{problem}
+	\begin{center}
+
+        Transfer function of plant
+%--------------------------------------------------------------------------------
+	\begin{equation}
+        G(S) = \frac{0.6899}{0.0499s + 1} \times e^{-0.0657s}
+	\end{equation}
+%---------------------------------------------------------------------------------
+     Transfer function of integral controller
+%--------------------------------------------------------------------------------
+	\begin{equation}
+        C(s) = \frac{16.24}{s}
+	\end{equation}
+%---------------------------------------------------------------------------------
+
+    Transfer function of PI controller
+	\begin{equation}
+        C(s) = \frac{1.282s + 9.93}{s}
+	\end{equation}
+%---------------------------------------------------------------------------------
+    Transfer function of filtered PI controller
+	\begin{equation}
+        C(s) = \frac{1.282s + 9.93}{0.01763s^2 + s}
+	\end{equation}
+%---------------------------------------------------------------------------------
+	\end{center}
+	\end{problem}
+
+	\caption{Summary of all system controllers}
+	\label{controllers}
+\end{figure}
+\section{Design}
+\subsection{Identification: 19476700}
+The aim of identification is to be able to produce a first order plus dead time (FOPDT) model (\cite{lec4_higher_order}) based on the step response module created by experimental data given by my student ID of \emph{19476700} (\cite{ass}). The plant can be represented by $G(s) = \frac{\mu}{\tau s + 1} \times e^{-Ls}$ whereby the DC-gain ($\mu$) is the system at steady state, the time delay ($L$) must be $20\%$ of the steady state value, and the time constant ($\tau$) must be $63\%$ of the steady state.\par
+
+\subsubsection{DC Gain of Plant}
+The DC-gain is where the output of the experimental step function is asymptotic. From visual inspection of the experimental step response (red line) in figure \ref{FOPDT} a reasonable DC-gain will reside in the range of $0.69 \leq \mu \leq 0.66$ with the corresponding time values in the domain of $[0.3, \infty)$. Therefore, to calculate the DC-gain the programme illustrated in figure \ref{dcGain} extracts the last $20\%$ of the response, and filters for values which are strictly steady-state as illustrated by line 8 in figure \ref{dcGain}. The value of $0.325$ was determined by running the experiment multiple times and printing the time vectors checking if values are within a small range of one another. Thereafter, an average of the steady-state values is calculated to find the DC gain. The obtained gain of $0.6899$ fits within the expected range of $0.69 \leq \mu \leq 0.66$ therefore, the DC-gain coincides with the experimental step function (blue line).\par
+
+\begin{figure}[htp]
+    \lstinputlisting[firstline = 55, lastline=63]{example.m}
+    \caption{MATLAB code: finding $\mu$ for plant}
+    \label{dcGain}
+\end{figure}
+
+\subsubsection{Delay of Plant}
+The delay was obtained by finding $20\%$ of the steady-state ($0.2 \times \mu$) then locating values close to the calculated values. It's expected that the calculated value may not correspond to any values in the response vector ($\vec{t}^{\,}$) of the generated system hence, the program must locate values to the calculated delay within a tolerance of $0.0001$. The tolerance of $0.0001$ was determined by running the experiment multiple times until the returned filtered values were minimised. Then, the minimum value is selected and the corresponding time value is found which represents the delay of the system, as illustrated in figure \ref{lValue}.\par
+
+\begin{figure}[!htb]
+    \lstinputlisting[firstline=71, lastline=78]{example.m}
+    \caption{MATLAB code: finding $L$ for plant}
+    \label{lValue}
+\end{figure}
+
+\subsubsection{Time constant}
+The time constant is determined through the same procedure as the delay of the plant in the former section hence, the MATLAB code will not be shown. The differing components are that the response is multiplied by $0.63$ corresponding to line 1 in figure \ref{lValue}, and the returned time value in line 8 figure \ref{lValue} is going to be used to calculate the time constant. The time constant is given by the equation of $(-\frac{t^{*} - L}{ln(1 - \mu)})$ (\cite{lec4_higher_order}) whereby $t^{*}$ is the returned value given by line 8 figure \ref{lValue}. The MATLAB code for this calculation will not be shown as it's trivial. The returned time constant for the plant is $0.0499$ resulting in the plant illustrated in equation 1  figure \ref{controllers}.
+
+ \subsection{Controllers}
+ The aim of controllers is to design an integral controller which satisfies conditions one, two and three, a PI controller which satisfies conditions one to four, and a filtered PI controller which satisfies all conditions. The procedure of constructing the controller includes determining the time constant, determining Evan's gain ($K$) resulting in the testing of the step and ramp error, and attenuation characteristics of the closed-loop system.\par
+
+\subsubsection{Integral controller}
+The integral controller doesn't include a time constant value hence, Evan's gain is determined first. The Evan's gain is determined through the close loop transfer function at the gain crossover frequency ($|L(j \omega_{g}| = 1$) (\cite{gain_crossover}). This is determined by the MATLAB code illustrated in figure \ref{K}. Calculation of Evan's gain through this manner will ensure condition one of the integral controller is satisfied by default as it is done at the cross over frequency demonstrated by line 2 in figure \ref{K}. The obtained Evan's gain is $16.24$ constructing the integral controller illustrated in equation 2 figure \ref{controllers}.\par
+To verify that condition two is not satisfied, the programme plots the bode diagram of the closed-loop feedback of the controller and plant ($C(s) * G(s)$) using the MATLAB command \emph{margin()} producing the blue line as illustrated in figure \ref{margin plots}. Due to multiple plots on the margin figure MATLAB didn't produce the phase margin and cross over frequency in the title hence, the numerical values were obtained through the command \emph{allmargin()} producing results illustrated in table \ref{Bode}.
+
+\begin{figure}[htp]
+    \lstinputlisting[firstline=459, lastline=464]{example.m}
+    \caption{MATLAB code: finding Evan's gain for controller}
+    \label{K}
+\end{figure}
+The step and ramp response reference signals can be constructed of the close loop form of $\frac{L(s)}{1 + L(s)}$, and the step and ramp error signals can be constructed using the closed loop form of $\frac{1}{1+L(s)}$. The reference and error signal is constructed using the \emph{feedback(numerator, denominator)} MATLAB command whereby the reference and error signal for the ramp function is pre-multiplied by $\frac{1}{s}$, and the \emph{feedback()} system is plotted using the \emph{step()} MATLAB command resulting in the responses as illustrated in figures \ref{step}, \ref{step err}, \ref{ramp}, and \ref{ramp err}. As illustrated in figure \ref{step err} all controllers reach a tracking error steady state of $0$ hence, all controllers satisfying condition three of the design.\par
+
+Condition four can be satisfied through the expression $e_{r} < 3 \tau R$ (\cite{ass}) whereby the R is the gradient of the graphs which were produced in figure \ref{ramp}, and $e_{r}$ is determined by the final value theorem of the controller multiplied by the ramp response ($\frac{R}{s^{2}}$) of the system. The final value theorem of all controllers will simplify to $e_{r} = \frac{R}{K \mu}$, the MATLAB code for these operations will not be included as they're trivial. Although, as illustrated in table \ref{conditions} all controllers satisfy condition four of the design, and this can be visually checked by the responses in figure \ref{ramp err}.\par
+
+\subsubsection{PI and Filtered PI controller}
+The PI controller will take the form of  $\frac{K(\tau_{1}s + 1)}{s}$, with the time constant of the zero being calculated through the phase margin of the close loop system at the cross over frequency ($ \phi_{m} = \angle L(j \omega_{c}) + \pi$) as illustrated in the MATLAB code in figure \ref{t1}. The greater the phase margin, the greater the closed-loop margin hence, the phase margin was obtained through trial and error until the close loop response had a phase margin that satisfied condition two. Through experimentation, it was found that a phase margin increase of $250\%$ was enough to satisfy condition two of the PI controller but not sufficient to satisfy for filtered PI controller resulting in a phase margin of $280\%$ as illustrated in line 3 figure \ref{t1}. Producing a time constant of $0.1291$ of the zero, this value will be used for the filtered PI controller. The Evan's gain is obtained the same procedure outlined in the integral controller, and shown by the function in figure \ref{K}. Therefore, the final PI controller is illustrated by equation 3 in figure \ref{controllers}.\par
+\begin{figure}[htp]
+    \lstinputlisting[firstline=228, lastline=231]{example.m}
+    \caption{MATLAB code: finding $\tau_{1}$ for PI and filtered PI controller}
+    \label{t1}
+\end{figure}
+
+The ability of a controller to be able to mitigate noise is determined by a second-order controllers damping ratio (\cite{WANG2013459}). Due to the PI and integral controller not being second-order systems, the controllers will not have any damping characteristics (\cite{lec4_systems}) hence, when the close loop of the PI controller is simulated against noise it will not satisfy condition five as illustrated in figure \ref{steady state} and table \ref{conditions}, and the integral controller satisfying condition 5.\par $ $% COME BACK TO THIS
+
+ The filtered PI controller is a second order system whereby the damping ratio ($\xi$) can be determine by $\omega_{n,i}^{2} (\frac{s^{2}}{\omega_{n,i}^{2}} + 2 \frac{\xi_{i}}{\omega_{n,i}} s + 1)$ (\cite{LTI}). It can be observed that the relationship between the damping ratio is inversely proportional to the angular frequency ${\rm I\!R} = \frac{2 \xi_{i} \uparrow}{\omega_{n,i} \downarrow}$ hence, decreasing the angular frequency will damping the system , and attenuate noise as illustrated by the step ($0.001$) of the time vector as seen by line 4 of figure \ref{noise}. Given this observation condition five was met by running the experiment and decreasing the step condition until condition five was met.
+
+% this process is illustrated in figures \ref{attenuation} whereby, the graphs shows the change of attenuation as you decrease the angular frequency from left to right.
+%%I might not need this at all but, I do think it makes the report that much better
+\begin{figure}[!htp]
+    \lstinputlisting[firstline = 364, lastline=369]{example.m}
+    \caption{MATLAB code: Simulation of noise for the system}
+    \label{noise}
+\end{figure}
+%
+%%=========================================================================
+%\begin{figure}[!htb]
+%\minipage{0.32\textwidth}
+%  \includegraphics[width=\linewidth]{"Filtered PI controller/controller -3.png"}
+%  %\caption{I need to decide}\label{controller-3}
+%\endminipage\hfill
+%\minipage{0.32\textwidth}
+%  \includegraphics[width=\linewidth]{"Filtered PI controller/controller 0.png"}
+%  %\caption{I need to decide 2}\label{controller0}
+%\endminipage\hfill
+%\minipage{0.32\textwidth}%
+%  \includegraphics[width=\linewidth]{"Filtered PI controller/controller 1.png"}
+%  %\caption{I need to decide 3}\label{controller1}
+%\endminipage
+%    \caption{Noise attenuation of decreasing frequencies}\label{attenuation}
+%\end{figure}
+%=========================================================================
+\section{Conclusion}
+As demonstrated the filtered PI controller is the controller which should be chosen as it satisfies all the design conditions. The PI controller lacks attenuation of noise at higher frequencies due to it only having a pole at the origin hence, not meeting condition 5 thus not being a suitable controller. The integral controller is not a suitable choice as it doesn't satisfy condition two due to the system being fixed and not being able to shift with a time constant.
+
+\newpage
+\printbibliography
+
+%=========================================================================
+%GETTING MY THOUGHTS TOGETHER SO I CAN WRITE THIS SECTION WELL
+%=========================================================================
+%=========================================================================
+%bibliography
+%=========================================================================
+\end{document}
