@@ -6,6 +6,7 @@
 
 int main()
 {
+    int size = 10;
     std::string placeHolder = "NOT IN USE";
     //creating some objects so we can perform a quick sort on them 
     Book* book1 = new Book();
@@ -22,7 +23,7 @@ int main()
     Book* book10 = new Book(10, "Man's search Meaning - Victor E. "
     " Frankl", placeHolder);
 
-    Book* elements[] = {
+    Book* bookCollection[size] = {
     book5,
     book6,
     book7,
@@ -39,5 +40,39 @@ int main()
 
     std::cout << "Sorting books by Book ID, using quick sort" << std::endl;
 
+    std::cout << "The original books collection" <<std::endl;
+
+    printElements(bookCollection, size);
+
+    std::cout << "testing out the swap function" << std::endl;
+    swap(bookCollection[1], bookCollection[0]);
+    printElements(bookCollection, size);
+
+    std::cout << "The sorted books collection" <<std::endl;
+
     return 0;
+}
+
+void printElements(Book*  inBooks[], int inSize)
+{
+
+
+    for(int ii = 0 ; ii < inSize; ii++)
+    {
+        std::cout << "Book ID: " << inBooks[ii] -> getBookID() << "\n\tTITLE: "+
+        inBooks[ii] -> getBookName() << std::endl << std::endl;
+    }
+}
+
+void quickSort(Book* inBooks[], int inSize)
+{
+    int leftIndx = 0;
+    int rightIndx = inSize;
+}
+
+void swap(Book* bookOne, Book* bookTwo)
+{
+    Book temp = *bookOne;
+    *bookOne = *bookTwo;
+    *bookTwo = temp;
 }
