@@ -6,16 +6,24 @@
 
 # Makefile Variables
 CC = gcc 
+YY = yacc
+YFLAGS = -d 
 ll = lex
-EXEC = lex.yy.c
+EXEC = lex.yy.c y.tab.c y.tab.h
 CFLAGS = -g
-OBJ = rules
+OBJ = list
 
-$(EXEC) : $(OBJ)
+$(OBJ): $(EXEC)
 	$(CC) $(EXEC) -o $(OBJ) -ll
 
-rules : rules.l
-	$(ll)  rules.l
+
+
+lex.yy.c: list.l
+	$(ll)  list.l
+
+y.tab.c: list.y
+	$(YY) $(YFLAGS) list.y
+
 
 clean:
 	rm -f $(EXEC) $(OBJ) 
