@@ -93,7 +93,6 @@ int  doPartition(Book* inBooks[], int leftIndx, int rightIndx)
     //choosing the right most strategy for quick sort
     int pivot = inBooks[rightIndx] -> getBookID();
 
-
     //going through the partioned part of the array
     for(int ii = leftIndx; ii < rightIndx; ii++)
     {

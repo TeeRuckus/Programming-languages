@@ -1,2 +1,24 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {english}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Fortran}{1}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Algo68}{1}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}ADA}{2}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Scripting Languages}{4}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}Perl}{4}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2}Ruby}{4}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3}Bash}{4}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Small Talk}{5}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}C++}{5}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Prolog}{11}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}Scheme}{11}{}%
