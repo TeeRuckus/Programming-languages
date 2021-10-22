@@ -7,18 +7,15 @@
 # Makefile Variables
 CC = gcc 
 ll = lex
-EXEC = rules
+EXEC = lex.yy.c
 CFLAGS = -g
-OBJ = Book.o quickSort.o
+OBJ = rules
 
 $(EXEC) : $(OBJ)
-	$(CC) $(OBJ) -o $(EXEC) 
+	$(CC) $(EXEC) -o $(OBJ) -ll
 
-Book.o : Book.cpp Book.h
-	$(CC) $(CFLAGS) -c Book.cpp
-
-quickSort.o : quickSort.cpp quickSort.h
-	$(CC) $(CFLAGS) -c quickSort.cpp
+rules : rules.l
+	$(ll)  rules.l
 
 clean:
-	rm -f $(EXEC) $(TEST) $(OBJ) $(TEST_OBJ) $(gameTest) $(game_OBJ)
+	rm -f $(EXEC) $(OBJ) 
