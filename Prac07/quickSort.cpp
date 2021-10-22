@@ -118,15 +118,15 @@ to partion the data based on the in books bookID.Lastly the function is going
 to export the new pivot index*/
 int  doPartition(Book* inBooks[], int leftIndx, int rightIndx, int pivotIndx)
 {
-    Book* temp = inBooks[pivotIndx];
+    Book temp = *(inBooks[pivotIndx]);
     //int pivotValue = inBooks[pivotIndx] -> getBookID();
-    swap(inBooks[pivotIndx], inBooks[rightIndx]);
+    swap(inBooks[rightIndx], inBooks[pivotIndx]);
     int currIndx = leftIndx;
 
 
     for(int ii = leftIndx; ii < rightIndx; ii++)
     {
-        if ((inBooks[ii] -> getBookID()) < (inBooks[pivotIndx] -> getBookID()))
+        if ((inBooks[ii] -> getBookID()) <= (temp.getBookID()))
         {
             swap(inBooks[ii], inBooks[currIndx]);
             currIndx++;
@@ -136,8 +136,8 @@ int  doPartition(Book* inBooks[], int leftIndx, int rightIndx, int pivotIndx)
     //swap(inBooks[pivotIndx], inBooks[rightIndx]);
 
     //putting the pivot back into it's right ful place
-    inBooks[rightIndx] = inBooks[currIndx];
-    inBooks[currIndx] = temp;
+    *(inBooks[rightIndx]) = *(inBooks[currIndx]);
+    *(inBooks[currIndx]) = temp;
 
     return currIndx;
 }
