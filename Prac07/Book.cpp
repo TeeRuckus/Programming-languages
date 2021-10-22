@@ -12,12 +12,13 @@ Book::Book()
 }
 
 //alternate constructors
-Book::Book(int inBookID, std::string inBookName, std::string inISBN)
+Book::Book(int inBookID, std::string inBookName)
 {
     bookID = inBookID;
     bookName = inBookName;
-    ISBN = inISBN;
+    ISBN = "NOT IN USE";
 }
+
 
 //defining that the behaviours of the class is going to be in
 int Book::getBookID()
@@ -61,9 +62,7 @@ void Book::setBookISBN(std::string inBookISBN)
 
 Book::~Book()
 {
-    //extra memory clean up which is going to be done when instantiated objects
-    //are going to be destroyed
-    std::cout << "Book " + bookName + " has being deleted "<<std::endl;
+	//freeing the memory which was allocated in its class memebers
 }
 
 //all the private methods which are going to be used for data validation

@@ -7,6 +7,7 @@
 # Makefile Variables
 CC = g++
 EXEC = quickSort
+CFLAGS = -g
 OBJ = Book.o quickSort.o
 
 $(EXEC) : $(OBJ)

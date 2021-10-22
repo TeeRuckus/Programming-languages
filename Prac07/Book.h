@@ -9,7 +9,7 @@ class Book
 
     public:
         Book();
-        Book(int, std::string, std::string);
+        Book(int, std::string);
         int getBookID();
         std::string getBookName();
         std::string getISBN();
