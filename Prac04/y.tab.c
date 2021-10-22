@@ -1303,13 +1303,16 @@ yyreduce:
   case 5:
 #line 35 "list.y"
         {
-		printf("I am about to sort the inputted list\n");
+		if(yyvsp[0])
+			printf("YES\n");
+		else
+			printf("NO\n");
 	}
-#line 1309 "y.tab.c"
+#line 1312 "y.tab.c"
     break;
 
 
-#line 1313 "y.tab.c"
+#line 1316 "y.tab.c"
 
       default: break;
     }
@@ -1541,5 +1544,5 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 39 "list.y"
+#line 42 "list.y"
 

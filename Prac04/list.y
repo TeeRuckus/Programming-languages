@@ -33,7 +33,10 @@ list:
 sort:
 	TOKLIST
 	{
-		printf("I am about to sort the inputted list\n");
+		if($1)
+			printf("YES\n");
+		else
+			printf("NO\n");
 	}
 	;
 %%
