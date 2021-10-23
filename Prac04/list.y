@@ -74,10 +74,10 @@ int* makeArray(char * inList)
     int sizeStr = strlen(inList) + 1;
     copyStr = (char*)malloc(sizeStr * sizeof(char));
     char* delimiter = ",[]";
-    int size = getSize(copyStr);
     int ii = 0;
 
     strcpy(copyStr, inList);
+    int size = getSize(copyStr);
 
     int* outArr = (int*)malloc((size) * sizeof(int));
 
@@ -90,6 +90,7 @@ int* makeArray(char * inList)
         ii++;
     }
 
+    printf("size: %d\n", size);
     free(copyStr);
 
     displayArrray(outArr, size);
@@ -108,6 +109,7 @@ int getSize(char *inList)
     {
         printf("%s\n", token);
         token = strtok(NULL, delimiter);
+        count++;
     }
 
     return count;
