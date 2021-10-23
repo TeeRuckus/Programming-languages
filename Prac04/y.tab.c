@@ -69,15 +69,13 @@
 #line 1 "list.y"
 
 /* C declaration used in actions*/
-#define YYSTYPE char *
-int yylex();
-void yyerror(char *s);
+#include "list.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
 
-#line 81 "y.tab.c"
+#line 79 "y.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -127,15 +125,17 @@ extern int yydebug;
   {
     TOKLIST = 258,
     TOKENSORT = 259,
-    print = 260,
-    exit_command = 261
+    PRINT = 260,
+    EXIT_COMMAND = 261,
+    EMPTY_LIST = 262
   };
 #endif
 /* Tokens.  */
 #define TOKLIST 258
 #define TOKENSORT 259
-#define print 260
-#define exit_command 261
+#define PRINT 260
+#define EXIT_COMMAND 261
+#define EMPTY_LIST 262
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
@@ -458,16 +458,16 @@ union yyalloc
 #define YYLAST   6
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  7
+#define YYNTOKENS  8
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  5
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  7
+#define YYNRULES  8
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  9
+#define YYNSTATES  10
 
 #define YYUNDEFTOK  2
-#define YYMAXUTOK   261
+#define YYMAXUTOK   262
 
 
 /* YYTRANSLATE(TOKEN-NUM) -- Symbol number corresponding to TOKEN-NUM
@@ -505,14 +505,14 @@ static const yytype_int8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
-       5,     6
+       5,     6,     7
 };
 
 #if YYDEBUG
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    16,    16,    17,    21,    23,    27,    33
+       0,    14,    14,    15,    19,    21,    25,    34,    41
 };
 #endif
 
@@ -521,8 +521,9 @@ static const yytype_int8 yyrline[] =
    First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
 {
-  "$end", "error", "$undefined", "TOKLIST", "TOKENSORT", "print",
-  "exit_command", "$accept", "commands", "command", "sort", "exit", YY_NULLPTR
+  "$end", "error", "$undefined", "TOKLIST", "TOKENSORT", "PRINT",
+  "EXIT_COMMAND", "EMPTY_LIST", "$accept", "commands", "command", "sort",
+  "exit", YY_NULLPTR
 };
 #endif
 
@@ -531,7 +532,7 @@ static const char *const yytname[] =
    (internal) symbol number NUM (which must be that of a token).  */
 static const yytype_int16 yytoknum[] =
 {
-       0,   256,   257,   258,   259,   260,   261
+       0,   256,   257,   258,   259,   260,   261,   262
 };
 # endif
 
@@ -549,7 +550,7 @@ static const yytype_int16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      -3,     0,    -3,    -2,    -3,    -3,    -3,    -3,    -3
+      -3,     0,    -3,    -2,    -3,    -3,    -3,    -3,    -3,    -3
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -557,7 +558,7 @@ static const yytype_int8 yypact[] =
      means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-       2,     0,     1,     0,     7,     3,     4,     5,     6
+       2,     0,     1,     0,     8,     3,     4,     5,     6,     7
 };
 
   /* YYPGOTO[NTERM-NUM].  */
@@ -577,31 +578,31 @@ static const yytype_int8 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-       2,     8,     0,     0,     3,     0,     4
+       2,     8,     0,     0,     3,     9,     4
 };
 
 static const yytype_int8 yycheck[] =
 {
-       0,     3,    -1,    -1,     4,    -1,     6
+       0,     3,    -1,    -1,     4,     7,     6
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
      symbol of state STATE-NUM.  */
 static const yytype_int8 yystos[] =
 {
-       0,     8,     0,     4,     6,     9,    10,    11,     3
+       0,     9,     0,     4,     6,    10,    11,    12,     3,     7
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_int8 yyr1[] =
 {
-       0,     7,     8,     8,     9,     9,    10,    11
+       0,     8,     9,     9,    10,    10,    11,    11,    12
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
 static const yytype_int8 yyr2[] =
 {
-       0,     2,     0,     2,     1,     1,     2,     1
+       0,     2,     0,     2,     1,     1,     2,     2,     1
 };
 
 
@@ -1297,24 +1298,36 @@ yyreduce:
   switch (yyn)
     {
   case 6:
-#line 28 "list.y"
+#line 26 "list.y"
         {
-        printf("hey I found a list %s\n", yyvsp[0]);
+        int* arrayToSort;
+        printf("Sorting: %s ...\n", yyvsp[0]);
+        arrayToSort = makeArray(yyvsp[0]);
+
+        free(arrayToSort);
 	}
-#line 1305 "y.tab.c"
+#line 1310 "y.tab.c"
     break;
 
   case 7:
-#line 34 "list.y"
+#line 35 "list.y"
+    {
+        printf("empty list TvT\n");
+    }
+#line 1318 "y.tab.c"
+    break;
+
+  case 8:
+#line 42 "list.y"
     {
         printf("Goodbye, and take care\n");
         exit(1);
     }
-#line 1314 "y.tab.c"
+#line 1327 "y.tab.c"
     break;
 
 
-#line 1318 "y.tab.c"
+#line 1331 "y.tab.c"
 
       default: break;
     }
@@ -1546,7 +1559,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 40 "list.y"
+#line 48 "list.y"
 
 /* C functions */
 
@@ -1554,13 +1567,13 @@ yyreturn:
 int main()
 {
 	printf("Enter \"sort\" followed a list to sort \"[...]\"\n");
+    //you can throw your initialisation code for your data structures here
 
 	//parsing in the rules and the grammar which was made by yacc
-	yyparse();
+	return yyparse();
 
 	/*this is going to do your splitting of your code, and the sorting of your
 	code as well*/
-	return 0;
 }
 
 void yyerror  (char *str)
@@ -1568,8 +1581,81 @@ void yyerror  (char *str)
 	fprintf(stderr, "error: %s\n", str);
 }
 
-/*
-	so this is where you're going to have your sort, and this is where you're
-	going to be parsing int he list, and turning each every single integer
-	value into an integer
-*/
+//all the helper functions
+int* makeArray(char * inList)
+{
+    //char[strlen(inList) + 1] copyStr;
+    char* copyStr;
+    int sizeStr = strlen(inList) + 1;
+    copyStr = (char*)malloc(sizeStr * sizeof(char));
+    char* delimiter = ",[]";
+    int size = getSize(copyStr);
+    int ii = 0;
+
+    strcpy(copyStr, inList);
+
+    int* outArr = (int*)malloc((size) * sizeof(int));
+
+    char* token = strtok(inList, delimiter);
+    while (token != NULL)
+    {
+        printf("token: %s\n", token);
+        outArr[ii] = atoi(token);
+        token = strtok(NULL, delimiter);
+        ii++;
+    }
+
+    free(copyStr);
+
+    displayArrray(outArr, size);
+
+    return outArr;
+}
+
+/*PURPOSE: a function to tokenize a string, and to count how many tokens 
+were found*/
+int getSize(char *inList)
+{
+    int count = 0;
+    char* delimiter = ",[]";
+    char* token = strtok(inList, delimiter);
+    while (token != NULL)
+    {
+        printf("%s\n", token);
+        token = strtok(NULL, delimiter);
+    }
+
+    return count;
+}
+
+/*PURPOSE: to parse string formatted integers into integers */
+void parseArrInt(char** inCharArr, int* inIntArr, int arrayLen)
+{
+    int ii;
+   
+    /*ii = 2: ignoring the first two arguments which are the programme name
+    and the function been called from the command line */ 
+    for(ii = 2; ii < arrayLen; ii++)
+    {
+        inIntArr[ii] = atoi(inCharArr[ii]);
+    }
+}
+
+/*PURPOSE: to take an array and display them in the following format 
+  {4, 14, 5, 8, 2}
+
+  CODE ADAPTED: from my own UCP submission*/
+void displayArrray(int inIntArr[], int arrayLen)
+{
+    int ii;
+    printf("{%d, ",inIntArr[0]);
+
+    /*printing all the middle elements of the array, and leaving the last 
+    element of the array so it can be formatteded propely */
+    for(ii = 1; ii < arrayLen -1; ii++)
+    {
+        printf("%d, ",inIntArr[ii]);
+    }
+    printf("%d}\n",inIntArr[arrayLen - 1]);
+}
+

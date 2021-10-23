@@ -10,8 +10,9 @@ list \[[0-9]+(,[0-9]+)*\]
 %%
 sort	{return TOKENSORT;}
 {list}	{yylval=strdup(yytext); return TOKLIST;}
-exit	{return exit_command;}
-print	{return print;}
+exit	{return EXIT_COMMAND;}
+print	{return PRINT;}
+"[]"		{return EMPTY_LIST;}
 \n		/*ignoring end of line*/;
 %%
 

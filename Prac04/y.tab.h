@@ -51,15 +51,17 @@ extern int yydebug;
   {
     TOKLIST = 258,
     TOKENSORT = 259,
-    print = 260,
-    exit_command = 261
+    PRINT = 260,
+    EXIT_COMMAND = 261,
+    EMPTY_LIST = 262
   };
 #endif
 /* Tokens.  */
 #define TOKLIST 258
 #define TOKENSORT 259
-#define print 260
-#define exit_command 261
+#define PRINT 260
+#define EXIT_COMMAND 261
+#define EMPTY_LIST 262
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED

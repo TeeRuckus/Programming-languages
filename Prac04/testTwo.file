@@ -1,11 +1,1 @@
-lists sort [10,9,8,7,6,5,4,3,2,1]
-list sort 1,2,3,4,5
-list sort hey, my name is tawana
 list sort [10,9,8,7,6,5,4,3,2,1]
-list sort [10,9,8,7,6,5,4,3,2,1]
-list sort[69,50,80,100,1,2,3]
-list sort I am going to actually to test the lists which are going to be in the worksheet
-list sort []
-list sort [1]
-list sort[1,2,3]
-list sort [2,4,5,8,23]
