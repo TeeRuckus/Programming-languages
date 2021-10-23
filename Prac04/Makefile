@@ -5,7 +5,7 @@
 #PURPOSE: A make file to run all the download relateded programmes 
 
 # Makefile Variables
-CC = gcc 
+CC = gcc -g
 YY = yacc
 YFLAGS = -d 
 ll = lex
@@ -14,7 +14,7 @@ CFLAGS = -g
 OBJ = list
 
 $(OBJ): $(EXEC)
-	$(CC) $(EXEC) -o $(OBJ) -ll
+	$(CC) $(EXEC) -o $(OBJ)
 
 
 

@@ -49,11 +49,17 @@ extern int yydebug;
 # define YYTOKENTYPE
   enum yytokentype
   {
-    TOKLIST = 258
+    TOKLIST = 258,
+    TOKENSORT = 259,
+    print = 260,
+    exit_command = 261
   };
 #endif
 /* Tokens.  */
 #define TOKLIST 258
+#define TOKENSORT 259
+#define print 260
+#define exit_command 261
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED

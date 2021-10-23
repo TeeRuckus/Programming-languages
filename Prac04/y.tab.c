@@ -68,27 +68,16 @@
 /* First part of user prologue.  */
 #line 1 "list.y"
 
+/* C declaration used in actions*/
+#define YYSTYPE char *
+int yylex();
+void yyerror(char *s);
 #include <stdio.h>
 #include <string.h>
-
-void yyerror (const char *str)
-{
-	fprintf(stderr, "error: %s\n", str);
-}
-
-int yywrap()
-{
-	return 1;
-}
-
-int main()
-{
-	yyparse();
-	return 0;
-}
+#include <stdlib.h>
 
 
-#line 92 "y.tab.c"
+#line 81 "y.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -136,11 +125,17 @@ extern int yydebug;
 # define YYTOKENTYPE
   enum yytokentype
   {
-    TOKLIST = 258
+    TOKLIST = 258,
+    TOKENSORT = 259,
+    print = 260,
+    exit_command = 261
   };
 #endif
 /* Tokens.  */
 #define TOKLIST 258
+#define TOKENSORT 259
+#define print 260
+#define exit_command 261
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
@@ -460,19 +455,19 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  2
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   3
+#define YYLAST   6
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  4
+#define YYNTOKENS  7
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  4
+#define YYNNTS  5
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  5
+#define YYNRULES  7
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  6
+#define YYNSTATES  9
 
 #define YYUNDEFTOK  2
-#define YYMAXUTOK   258
+#define YYMAXUTOK   261
 
 
 /* YYTRANSLATE(TOKEN-NUM) -- Symbol number corresponding to TOKEN-NUM
@@ -509,14 +504,15 @@ static const yytype_int8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     1,     2,     3
+       2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
+       5,     6
 };
 
 #if YYDEBUG
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    26,    26,    27,    31,    34
+       0,    16,    16,    17,    21,    23,    27,    33
 };
 #endif
 
@@ -525,8 +521,8 @@ static const yytype_int8 yyrline[] =
    First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
 {
-  "$end", "error", "$undefined", "TOKLIST", "$accept", "lists", "list",
-  "sort", YY_NULLPTR
+  "$end", "error", "$undefined", "TOKLIST", "TOKENSORT", "print",
+  "exit_command", "$accept", "commands", "command", "sort", "exit", YY_NULLPTR
 };
 #endif
 
@@ -535,11 +531,11 @@ static const char *const yytname[] =
    (internal) symbol number NUM (which must be that of a token).  */
 static const yytype_int16 yytoknum[] =
 {
-       0,   256,   257,   258
+       0,   256,   257,   258,   259,   260,   261
 };
 # endif
 
-#define YYPACT_NINF (-1)
+#define YYPACT_NINF (-3)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
@@ -553,7 +549,7 @@ static const yytype_int16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      -1,     0,    -1,    -1,    -1,    -1
+      -3,     0,    -3,    -2,    -3,    -3,    -3,    -3,    -3
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -561,19 +557,19 @@ static const yytype_int8 yypact[] =
      means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-       2,     0,     1,     5,     3,     4
+       2,     0,     1,     0,     7,     3,     4,     5,     6
 };
 
   /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-      -1,    -1,    -1,    -1
+      -3,    -3,    -3,    -3,    -3
 };
 
   /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     1,     4,     5
+      -1,     1,     5,     6,     7
 };
 
   /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -581,31 +577,31 @@ static const yytype_int8 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-       2,     0,     0,     3
+       2,     8,     0,     0,     3,     0,     4
 };
 
 static const yytype_int8 yycheck[] =
 {
-       0,    -1,    -1,     3
+       0,     3,    -1,    -1,     4,    -1,     6
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
      symbol of state STATE-NUM.  */
 static const yytype_int8 yystos[] =
 {
-       0,     5,     0,     3,     6,     7
+       0,     8,     0,     4,     6,     9,    10,    11,     3
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_int8 yyr1[] =
 {
-       0,     4,     5,     5,     6,     7
+       0,     7,     8,     8,     9,     9,    10,    11
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
 static const yytype_int8 yyr2[] =
 {
-       0,     2,     0,     2,     1,     1
+       0,     2,     0,     2,     1,     1,     2,     1
 };
 
 
@@ -1300,19 +1296,25 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-  case 5:
-#line 35 "list.y"
+  case 6:
+#line 28 "list.y"
         {
-		if(yyvsp[0])
-			printf("YES\n");
-		else
-			printf("NO\n");
+        printf("hey I found a list %s\n", yyvsp[0]);
 	}
-#line 1312 "y.tab.c"
+#line 1305 "y.tab.c"
+    break;
+
+  case 7:
+#line 34 "list.y"
+    {
+        printf("Goodbye, and take care\n");
+        exit(1);
+    }
+#line 1314 "y.tab.c"
     break;
 
 
-#line 1316 "y.tab.c"
+#line 1318 "y.tab.c"
 
       default: break;
     }
@@ -1544,5 +1546,30 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 42 "list.y"
+#line 40 "list.y"
 
+/* C functions */
+
+/*where most of our code is going to be exectuted*/
+int main()
+{
+	printf("Enter \"sort\" followed a list to sort \"[...]\"\n");
+
+	//parsing in the rules and the grammar which was made by yacc
+	yyparse();
+
+	/*this is going to do your splitting of your code, and the sorting of your
+	code as well*/
+	return 0;
+}
+
+void yyerror  (char *str)
+{
+	fprintf(stderr, "error: %s\n", str);
+}
+
+/*
+	so this is where you're going to have your sort, and this is where you're
+	going to be parsing int he list, and turning each every single integer
+	value into an integer
+*/
