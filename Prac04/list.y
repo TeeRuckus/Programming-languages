@@ -25,10 +25,23 @@ sort:
 	TOKENSORT TOKLIST 
 	{
         int* arrayToSort;
+        char* copyStr;
+        int sizeStr = strlen($2) + 1;
+        copyStr = (char*)malloc(sizeStr * sizeof(char));
+        strcpy(copyStr, $2);
+
+        int size = getSize(copyStr);
+
         printf("Sorting: %s ...\n", $2);
-        arrayToSort = makeArray($2);
+        arrayToSort = makeArray($2, size);
+        bubbleSort(arrayToSort, size);
+
+        printf("sorted array: ");
+        displayArrray(arrayToSort, size);
+        printf("\n");
 
         free(arrayToSort);
+        free(copyStr);
 	}
     |
     TOKENSORT EMPTY_LIST
@@ -66,40 +79,61 @@ void yyerror  (char *str)
 	fprintf(stderr, "error: %s\n", str);
 }
 
-//all the helper functions
-int* makeArray(char * inList)
+/*PURPOSE: to be sort an integer array in ascending order using the ebubble
+sort method*/
+void bubbleSort(int* inArr, int size)
 {
-    //char[strlen(inList) + 1] copyStr;
-    char* copyStr;
-    int sizeStr = strlen(inList) + 1;
-    copyStr = (char*)malloc(sizeStr * sizeof(char));
+    int sorted = FALSE;
+    
+    while(!sorted)
+    {
+        sorted = TRUE;
+        for (int ii = 0; ii < size - 1; ii++)
+        {
+            if (inArr[ii] > inArr[ii+1])
+            {
+                swap(&inArr[ii], &inArr[ii+1]);
+                sorted = FALSE;
+            }
+        }
+    }
+}
+
+/*PURPOSE: to swap two integer memory locations around */
+void swap(int* memOne, int* memTwo)
+{
+    int temp  = *memOne;
+    *memOne = *memTwo;
+    *memTwo = temp;
+}
+
+
+/*PURPOSE: to take in a list as a string, tokenize the string, and extract all
+the numbers from the string */
+
+int* makeArray(char * inList, int size)
+{
     char* delimiter = ",[]";
     int ii = 0;
 
-    strcpy(copyStr, inList);
-    int size = getSize(copyStr);
 
     int* outArr = (int*)malloc((size) * sizeof(int));
 
     char* token = strtok(inList, delimiter);
     while (token != NULL)
     {
-        printf("token: %s\n", token);
         outArr[ii] = atoi(token);
         token = strtok(NULL, delimiter);
         ii++;
     }
 
-    printf("size: %d\n", size);
-    free(copyStr);
-
-    displayArrray(outArr, size);
 
     return outArr;
 }
 
 /*PURPOSE: a function to tokenize a string, and to count how many tokens 
 were found*/
+
 int getSize(char *inList)
 {
     int count = 0;
@@ -107,7 +141,6 @@ int getSize(char *inList)
     char* token = strtok(inList, delimiter);
     while (token != NULL)
     {
-        printf("%s\n", token);
         token = strtok(NULL, delimiter);
         count++;
     }
@@ -115,23 +148,11 @@ int getSize(char *inList)
     return count;
 }
 
-/*PURPOSE: to parse string formatted integers into integers */
-void parseArrInt(char** inCharArr, int* inIntArr, int arrayLen)
-{
-    int ii;
-   
-    /*ii = 2: ignoring the first two arguments which are the programme name
-    and the function been called from the command line */ 
-    for(ii = 2; ii < arrayLen; ii++)
-    {
-        inIntArr[ii] = atoi(inCharArr[ii]);
-    }
-}
-
-/*PURPOSE: to take an array and display them in the following format 
-  {4, 14, 5, 8, 2}
+/*PURPOSE: to take an array and display them onto the screen, and the displayed
+numbers will be surrounded with '{' and '}' brackets
 
   CODE ADAPTED: from my own UCP submission*/
+
 void displayArrray(int inIntArr[], int arrayLen)
 {
     int ii;

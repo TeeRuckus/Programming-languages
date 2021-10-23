@@ -13,7 +13,7 @@ sort	{return TOKENSORT;}
 exit	{return EXIT_COMMAND;}
 print	{return PRINT;}
 "[]"		{return EMPTY_LIST;}
-\n		/*ignoring end of line*/;
+ \t\n		/*ignoring end of line and empty spaces*/;
 %%
 
 int yywrap()
