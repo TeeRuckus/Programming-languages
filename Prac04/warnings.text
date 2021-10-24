@@ -1,3 +1,0 @@
-lex  list.l
-yacc -d  list.y
-gcc -g lex.yy.c y.tab.c y.tab.h -o list

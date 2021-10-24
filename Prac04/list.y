@@ -8,7 +8,7 @@
 %}
 
 /*YACC definition*/
-%token TOKLIST TOKENSORT PRINT EXIT_COMMAND EMPTY_LIST
+%token TOKLIST TOKENSORT PRINT EXIT_COMMAND EMPTY_LIST ONE_NUMBER
 
 %%
 commands: /* empty */
@@ -47,6 +47,11 @@ sort:
     TOKENSORT EMPTY_LIST
     {
         printf("empty list TvT\n");
+    }
+    |
+    TOKENSORT ONE_NUMBER
+    {
+        printf("already sorted: %s", $2);
     }
     ;
 

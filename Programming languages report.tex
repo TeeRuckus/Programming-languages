@@ -67,8 +67,8 @@
 %I want to save space when I am writing my document, so I am going to have
 %everything as the default values for the system
 %\setlength{\parindent}{0pt}
-%\setlength{\parskip}{1.5em}
-%\onehalfspacing
+\setlength{\parskip}{1.5em}
+\onehalfspacing
 %\setstretch{1.25}
 %making a variable for where all my results are going to be stored
 \newcommand\pathFiles{"summary/"}
@@ -103,6 +103,13 @@
 \section{Introduction}
 you will need to write this one last, as you will need to know what you're
 talking about each of the sections which you're coding for
+
+\section{Programme Testing and Programme execution}
+Each programme folder in this assignment is going to have its own independent
+\textbf{README.md}, and \textbf{run.sh} files. Therefore, all the marker has to 
+do is to execute the run.sh file by typing \emph{./run.sh}. Although, practical 
+four doesn't contain a run.sh file but, instructions in the read me file has
+being left in the read me file on how to execute the individual scripts.
 
 \section{Fortran}
 
@@ -285,11 +292,50 @@ to do simple commands such as print a satement to the screen, and to use data
 strucutres such as arrays. \par
 
 \subsection{ADA: reflection}
+\textbf{come back to this as well}
 
 
 \section{Yacc and Lex}
 
+
 \subsection{Reflection}
+I really enjoyed the yacc and lex practical, although it was very time consuming
+and painful to do. Overal, it was a good experience to see how the basis of
+a programming langauge are going to be constructed. Furthermore, doing this 
+practical gave on appreciation of some of the fundemental concepts taught in my 
+computer science degrees.\par
+
+A thing point of frustration while writign the programme is that the \emph{yytext}
+variable was going to be a type of YYSTYPE which is going to be yacc's own datatype
+for defining a string. Therefore, durind compilitation I didn't think much about
+it but, as soon as I ran the programme through yacc it produced segmentation faults.
+Since, I thought the variable type YYSTYPE was just a warning, and it was
+going to be harmless I over looked the warning and that led into many hours of
+trying to discover on why my programme was producing a segementation fault. I
+would have wished the yacc compilier would have treated the data type mistmatch 
+as an actually error as other languages such as Java would have. Therefore,
+since the compilier will allow access of invalid memory addresses this going to 
+make the yacc language less \emph{reliable} to write in. \par
+
+Yacc and lex code are both going to be segemented into sections, whereby the
+first section is going to be the imports into the programme, and then after that 
+it's going to be either the yacc or lex definitions. The next section in the lex
+file is going to be the tokenising rules and the corresponding code it is going
+to send to yacc, in yacc the next section is going to be the grammar of the 
+language, and finally the last section is going to be the C functions which are
+going to be associated with each file. Due to the structured nature of the 
+programming language it made it easier to find area of interest i.e. if you want
+to change the manner which lex tokenize strings you can jump to the middle of the 
+file. Therefore, for this reason yacc and lex are going to adhere to the 
+\emph{structured programming principle} and as a consquence making the lnanguage
+readable.\par
+
+A good thing with yacc is that it was really easy to pick up as it was heavily 
+coupled to the C language. Therefore, they was not that much to learn in the
+yacc language except on how it would process its language grammars. \par
+
+\section{Scripting languages}
+
 
 
 \end{document}

@@ -81,17 +81,13 @@ $argadd Book.h
 set stal=2
 tabnew
 tabrewind
-edit Book.h
+edit quickSort.h
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
 wincmd _ | wincmd |
 vsplit
 2wincmd h
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
 wincmd w
 wincmd w
 wincmd t
@@ -99,12 +95,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 42 + 45) / 90)
-exe 'vert 1resize ' . ((&columns * 120 + 181) / 363)
-exe '2resize ' . ((&lines * 43 + 45) / 90)
+exe 'vert 1resize ' . ((&columns * 121 + 181) / 363)
 exe 'vert 2resize ' . ((&columns * 120 + 181) / 363)
-exe 'vert 3resize ' . ((&columns * 121 + 181) / 363)
-exe 'vert 4resize ' . ((&columns * 120 + 181) / 363)
+exe 'vert 3resize ' . ((&columns * 120 + 181) / 363)
 argglobal
 setlocal keymap=
 setlocal noarabic
@@ -140,7 +133,7 @@ setlocal dictionary=
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
-setlocal expandtab
+setlocal noexpandtab
 if &filetype != 'cpp'
 setlocal filetype=cpp
 endif
@@ -230,17 +223,15 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-3
-normal! zo
-let s:l = 21 - ((13 * winheight(0) + 21) / 42)
+let s:l = 4 - ((3 * winheight(0) + 43) / 86)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-21
-normal! 02|
+4
+normal! 0
 wincmd w
 argglobal
-if bufexists("quickSort.h") | buffer quickSort.h | else | edit quickSort.h | endif
+if bufexists("quickSort.cpp") | buffer quickSort.cpp | else | edit quickSort.cpp | endif
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -275,7 +266,7 @@ setlocal dictionary=
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
-setlocal noexpandtab
+setlocal expandtab
 if &filetype != 'cpp'
 setlocal filetype=cpp
 endif
@@ -365,145 +356,18 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 4 - ((3 * winheight(0) + 21) / 43)
+89
+normal! zo
+121
+normal! zo
+129
+normal! zo
+let s:l = 47 - ((46 * winheight(0) + 43) / 86)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-4
-normal! 043|
-wincmd w
-argglobal
-if bufexists("quickSort.cpp") | buffer quickSort.cpp | else | edit quickSort.cpp | endif
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal backupcopy=
-setlocal balloonexpr=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-set colorcolumn=80
-setlocal colorcolumn=80
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i,kspell
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal cursorlineopt=both
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'cpp'
-setlocal filetype=cpp
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-set foldlevel=99
-setlocal foldlevel=99
-setlocal foldmarker={{{,}}}
-set foldmethod=indent
-setlocal foldmethod=indent
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=-1
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeencoding=
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-setlocal nonumber
-setlocal numberwidth=4
-setlocal omnifunc=
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-set relativenumber
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal scrolloff=-1
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal sidescrolloff=-1
-setlocal signcolumn=no
-setlocal nosmartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'cpp'
-setlocal syntax=cpp
-endif
-setlocal tabstop=4
-setlocal tagcase=
-setlocal tagfunc=
-setlocal tags=
-setlocal termwinkey=
-setlocal termwinscroll=10000
-setlocal termwinsize=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal varsofttabstop=
-setlocal vartabstop=
-setlocal wincolor=
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-let s:l = 87 - ((73 * winheight(0) + 43) / 86)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-87
-normal! 029|
+47
+normal! 0
 wincmd w
 argglobal
 terminal ++curwin ++cols=120 ++rows=86 
@@ -541,7 +405,7 @@ setlocal dictionary=
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
-setlocal expandtab
+setlocal noexpandtab
 if &filetype != ''
 setlocal filetype=
 endif
@@ -631,20 +495,17 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 43) / 86)
+let s:l = 73 - ((72 * winheight(0) + 43) / 86)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+73
+normal! 042|
 wincmd w
 2wincmd w
-exe '1resize ' . ((&lines * 42 + 45) / 90)
-exe 'vert 1resize ' . ((&columns * 120 + 181) / 363)
-exe '2resize ' . ((&lines * 43 + 45) / 90)
+exe 'vert 1resize ' . ((&columns * 121 + 181) / 363)
 exe 'vert 2resize ' . ((&columns * 120 + 181) / 363)
-exe 'vert 3resize ' . ((&columns * 121 + 181) / 363)
-exe 'vert 4resize ' . ((&columns * 120 + 181) / 363)
+exe 'vert 3resize ' . ((&columns * 120 + 181) / 363)
 tabnext
 edit ~/programme/LinkList.h
 set splitbelow splitright
@@ -1071,14 +932,15 @@ exe 'vert 2resize ' . ((&columns * 105 + 181) / 363)
 exe 'vert 3resize ' . ((&columns * 136 + 181) / 363)
 tabnext 1
 set stal=1
-badd +10 ~/Documents/Programming\ Languages/Prac07/Book.h
+badd +21 ~/Documents/Programming\ Languages/Prac07/Book.h
 badd +29 ~/programme/LinkList.h
-badd +1 ~/Documents/Programming\ Languages/Prac07/quickSort.h
-badd +0 ~/Documents/Programming\ Languages/Prac07/quickSort.cpp
+badd +4 ~/Documents/Programming\ Languages/Prac07/quickSort.h
+badd +108 ~/Documents/Programming\ Languages/Prac07/quickSort.cpp
 badd +62 ~/programme/Makefile
-badd +1 ~/Documents/DSA/P08/DSAsorts.py
-badd +1 ~/Documents/Programming\ Languages/Prac07/Book.cpp
+badd +151 ~/Documents/DSA/P08/DSAsorts.py
+badd +41 ~/Documents/Programming\ Languages/Prac07/Book.cpp
 badd +21 ~/Documents/Programming\ Languages/Prac07/Makefile
+badd +0 ~/Documents/Programming\ Languages/Prac07/Book.c
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

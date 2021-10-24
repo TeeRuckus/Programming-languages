@@ -6,3 +6,4 @@ sort []
 sort [1]
 sort [1,2,3]
 sort [2,4,5,8,23]
+exit
