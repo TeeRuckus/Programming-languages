@@ -1,24 +1,28 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {english}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1}Fortran}{1}{}%
+\contentsline {section}{\numberline {1}Introduction}{1}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Algo68}{1}{}%
+\contentsline {section}{\numberline {2}Fortran}{1}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}ADA}{2}{}%
+\contentsline {subsection}{\numberline {2.1}Fortran: Discussion}{1}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Scripting Languages}{4}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Fortran: Comparison with written languages}{1}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}Perl}{4}{}%
+\contentsline {subsection}{\numberline {2.2}Fortran: Reflection}{2}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Ruby}{4}{}%
+\contentsline {subsection}{\numberline {2.3}Fortran: Testing and compiling}{2}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3}Bash}{4}{}%
+\contentsline {subsubsection}{\numberline {2.3.1}Results from running programme}{2}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Small Talk}{5}{}%
+\contentsline {section}{\numberline {3}Algo68}{2}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}C++}{5}{}%
+\contentsline {subsection}{\numberline {3.1}Algo 68: Fizzbuzz activation record}{2}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Prolog}{11}{}%
+\contentsline {subsection}{\numberline {3.2}Algo 68: Reflectoin}{2}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Scheme}{11}{}%
+\contentsline {section}{\numberline {4}ADA}{3}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}ADA: comparison with other buble sorts}{3}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2}ADA: reflection}{3}{}%

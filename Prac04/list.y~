@@ -22,7 +22,7 @@ command:
     ;
 
 sort:
-	TOKENSORT TOKLIST
+	TOKENSORT TOKLIST 
 	{
         int* arrayToSort;
         char* copyStr;
@@ -84,7 +84,7 @@ sort method*/
 void bubbleSort(int* inArr, int size)
 {
     int sorted = FALSE;
-
+    
     while(!sorted)
     {
         sorted = TRUE;
@@ -131,7 +131,7 @@ int* makeArray(char * inList, int size)
     return outArr;
 }
 
-/*PURPOSE: a function to tokenize a string, and to count how many tokens
+/*PURPOSE: a function to tokenize a string, and to count how many tokens 
 were found*/
 
 int getSize(char *inList)
@@ -158,7 +158,7 @@ void displayArrray(int inIntArr[], int arrayLen)
     int ii;
     printf("{%d, ",inIntArr[0]);
 
-    /*printing all the middle elements of the array, and leaving the last
+    /*printing all the middle elements of the array, and leaving the last 
     element of the array so it can be formatteded propely */
     for(ii = 1; ii < arrayLen -1; ii++)
     {
