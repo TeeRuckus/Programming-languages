@@ -84,7 +84,7 @@ void yyerror  (char *str)
 	fprintf(stderr, "error: %s\n", str);
 }
 
-/*PURPOSE: to be sort an integer array in ascending order using the bubble
+/*PURPOSE: to be sort an integer array in ascending order using the ebubble
 sort method*/
 void bubbleSort(int* inArr, int size)
 {
@@ -164,7 +164,7 @@ void displayArrray(int inIntArr[], int arrayLen)
     printf("{%d, ",inIntArr[0]);
 
     /*printing all the middle elements of the array, and leaving the last
-    element of the array so it can be formatted properly */
+    element of the array so it can be formatteded propely */
     for(ii = 1; ii < arrayLen -1; ii++)
     {
         printf("%d, ",inIntArr[ii]);

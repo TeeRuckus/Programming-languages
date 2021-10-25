@@ -242,62 +242,69 @@ Therefore in ALGOL 68 you're not going to get the side effects which you may get
 FORTRAN as the variables are going to be protected by scope resulting in ALGOL 68
 adhering to the \emph{information hiding principle}. \par
 
-Moreover, due to the introduction of scope, and the introduction of clear
-termination of constructs, it's a lot easier to look at an algo 68 programme and
-get a good idea on what the intededed purpose of the programme is going to be
-hence, adhering to the \emph{readability principle}. since, the algo-68 is going
-to be highly structured this also adheres to the \emph{structured programming}
-principle. as a consquence to these observation, wrting a programme in algo-68
-was a lot easier than writing a programme in fortran.
+\section{ADA}
+\subsection{ADA: Comparison With C Bubble sort}
+A difference between C and ADA Bubble sort is in the manner which they treat functions.
+In C the construction of function which will return nothing or something
+is going to have the same declaration, ADA separates the declaration of functions
+which are going to return something and nothing. With functions returning nothing
+being declared with the \emph{procedure} key word, and functions which are going to be
+returning something declared as \emph{sub-routines}. Therefore, in the bubble
+sort implementation, the swap, bubble-sort and display functions are going to be
+declared as functions in C, and as procedures in ADA.\par
 
-\section{ada}
-\subsection{ada: comparison with other buble sorts}
-a difference between the two lagnauges is going to be the way which they treat
-fucntions. in c the construction of function which will return nothing or something
-is going to have the same prototype, ada will actually will clearly segement these
-two classes of functions. functions which are going to return nothing are going
-to be referred to as \emph{procedures}, and functions which are going to return
-something are going to be refferred to as \emph{sub-routines}. \par
+Another difference between C and ADA is going to be the choice of terminating characters
+for commands. In C the end of a construct such as an if-and-else statement will
+need to be terminated withe a semi-colon, and in C the end of a if-and-else
+statement is going to be terminated with a right parenthesis. Therefore,
+in the bubble sort algorithm where it checks if the leading number is going to be
+less than the trailing number, ADA's if statement will terminate with a semi-colon,
+and C will terminate with a parenthesis.\par
 
-a difference between c and ada is going to be the choice of terminating characters
-for commands. in c the end of a construct such as a "if and else" statement will
-need to be terminated withe a semi-colon, and in c the end of a "if and else"
-statement is going to be terminated with a right parenthesis.\par
+A similarity between C and ADA implementation is going to be found in the
+positioning and definition of functions. In C this phenomenon is going to be
+referred to as forward declaration whereby, the function header has to
+be declared before the main body of code, in ADA the header and the function has
+to be declared and implemented before the main body of code otherwise, ADA and C
+complier will fail the programme. Therefore the swap, bubble-sort, and display
+methods have to be declared in C's implementation of the bubble sort, and in ADA
+the function has to be declared and implemented before the main method.
+Furthermore, this idea will also extend to variable deceleration positioning, in C-89
+implementations of bubble sort, as variables will have to be declared  before
+any commands are, and in ADA variables and types will have to be declared before
+the actual main body code, respective procedure and sub-routine functions.\par
 
-a similarity between c and ada implementation is going to be found in the
-positioning of the functions in the file. in c this phenomenon is going to be
-refferred to as forward declartion whereby, the functions (procedures) have to
-be declared before the main body of code otherwise both the ada and c compilier
-will complain that it doesn't kow what the following funciton is going to be. this
-idea will also extend to variable decelartoin positioning as well, in c-89
-variables will have to be decaled first before any commands are written, and in
-ada variables and types will have to be declared before the \emph{begin} key word.\par
-
-another similarity point between the ada and c implementation is going to be the
-use of pointer manipulation in order to swap any element which is going to be greater
-than the element which is going to be infront of it as both algorithms will
-derefrence that memory location to get what is going to be stored their.\par
-
-c and ada are going to be both strongly type languages. meaning that that a variable
-or a data structure must be declared with a type before they're going to be used.
-this idea will extend to function imports as well, the type of the imports must be
-declared before use
-
-\textbf{come back to this, i don't feel like writing it more}
-
-furthermore, ada and c will both require you to import packages in order to be able
-to do simple commands such as print a satement to the screen, and to use data
-strucutres such as arrays. \par
-
-\subsection{ada: reflection}
-\textbf{come back to this as well}
+Another similarity between the ADA and C implementation of bubble-sort is going
+to be the use of pointer manipulation in order to swap any element which is
+going to be greater than the element which is going to be in-front of the current
+element. In both algorithms the elements to be sorted array is going to be
+dereferenced, and then put swapped into the required position as seeing by the
+swap function.\par
 
 
-\section{yacc and lex}
+Furthermore, C and ADA are going to be both strongly type languages meaning,
+that a variable or a data structure must be declared with a type before they're
+going to be used. Therefore in the bubble sort implementation all variable names,
+imports, and exports are going to require a type.
+
+\subsection{ADA: reflection}
+ADA has a unique manner of declaring it's variables which I think is a little bit
+more readable as it follows the natural manner which we speak in. In ADA the variable
+name will be declared first proceeded by the variable type, in other languages
+such as Java an C the variable type will be declared first, and then the variable
+name will be declared second. In the human language it's more logical to say
+"A F-22 raptor is a plane", and not "a plane is a F-22 raptor" in this sentence
+clearly the type is going to be a plane, and the name is F-22 raptor. The logical
+most logical of constructing a sentence is to say the name followed by the type as
+demonstrated in the example above which, is in the manner which ADA declares its
+variables. Therefore, due to the manner of ADA's variable declaration  it will
+make the language more readable.
+
+\section{Yacc and Lex}
 
 
 \subsection{reflection}
-i really enjoyed the yacc and lex practical, although it was very time consuming
+I really enjoyed the yacc and lex practical, although it was very time consuming
 and painful to do. overal, it was a good experience to see how the basis of
 a programming langauge are going to be constructed. furthermore, doing this
 practical gave on appreciation of some of the fundemental concepts taught in my
