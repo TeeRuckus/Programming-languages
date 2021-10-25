@@ -301,43 +301,65 @@ variables. Therefore, due to the manner of ADA's variable declaration  it will
 make the language more readable.
 
 \section{Yacc and Lex}
+The first step in implementing symbol table is to choose the appropriate data
+structure to store the symbols based on requirements. Given that compliers are
+instruments which are used multiple times, and are going to be called multiply times
+it's important that the chosen data structure will have a fast access time, an
+ideal access time will be $$O(1)$$, and a more appropriate access time will be
+$$O(nlogn)$$. Therefore, the more appropriate data structures to be chosen
+will a form of a binary search tree, and or a hash table.\par
 
+After chosen the appropriate data structure, the next thing to be decide is in
+the manner which you're going to be accessing and setting your data in your data
+structure, and how it's going to interface with the YACC file.\par
+
+Then after, the symbol table can be implemented. Lex is going to server as the
+tokeniser hence, it's going to declare what each part of a programme is going to
+be, and Yacc is going to be where you grammar is going to be constructed hence,
+it's going to given meaning to a programme. The combination of Yacc and Lex will
+allow to create a parse tree. A parse tree is going to be a tree which is going
+to represent the hierarchical syntactical structure of your programme which is
+all the instructions ran in your programme and the root is going to be the actual
+programme, and the branches are going to be the individual instructions in the
+programme. Therefore, this parse tree is going to form your symbol table where as it
+has all the variable and the accompanying type. Lastly, the parse tree has to
+be stored in memory through the chosen data structure
+in step one.
 
 \subsection{reflection}
-I really enjoyed the yacc and lex practical, although it was very time consuming
-and painful to do. overal, it was a good experience to see how the basis of
-a programming langauge are going to be constructed. furthermore, doing this
-practical gave on appreciation of some of the fundemental concepts taught in my
-computer science degrees.\par
+I really enjoyed the Yacc and Lex practical, although it was very time consuming
+and painful to do. Overall, it was a good experience to see how the basis of
+a programming complier is going to be constructed. Furthermore, doing this
+practical gave on appreciation of some of the fundamental concepts taught in early
+computing units. \par
 
-a thing point of frustration while writign the programme is that the \emph{yytext}
-variable was going to be a type of yystype which is going to be yacc's own datatype
-for defining a string. therefore, durind compilitation i didn't think much about
-it but, as soon as i ran the programme through yacc it produced segmentation faults.
-since, i thought the variable type yystype was just a warning, and it was
-going to be harmless i over looked the warning and that led into many hours of
-trying to discover on why my programme was producing a segementation fault. i
-would have wished the yacc compilier would have treated the data type mistmatch
-as an actually error as other languages such as java would have. therefore,
-since the compilier will allow access of invalid memory addresses this going to
-make the yacc language less \emph{reliable} to write in. \par
+A point of frustration while writing the programme is that the \emph{yytext}
+variable was going to be a type of yystype which is going to be Yacc's own datatype
+for defining a string. Therefore, during compilation I didn't think much about the
+yystype warning, and as soon as I ran the programme through Yacc it produced segmentation faults.
+Since, I thought the variable type yystype was just a warning, I thought it was going to be harmless.
+This cardinal error lead into many hours of debugging, and playing around in Valgrind.
+I would have wished the Yacc complier would have treated the data type mismatch
+as an actually error as other languages such as java would have. Therefore,
+since the complier will allow access of invalid memory addresses without any
+other precautions Yacc will violate the \emph{defense in depth} principle. \par
 
-yacc and lex code are both going to be segemented into sections, whereby the
-first section is going to be the imports into the programme, and then after that
-it's going to be either the yacc or lex definitions. the next section in the lex
-file is going to be the tokenising rules and the corresponding code it is going
-to send to yacc, in yacc the next section is going to be the grammar of the
-language, and finally the last section is going to be the c functions which are
-going to be associated with each file. due to the structured nature of the
+Yacc and Lex code are both going to be segmented into sections, whereby the
+first section is going to be the imports for the programme, then
+it's going to be the definitions, the next section in the lex
+file is going to be the tokenising rules and the corresponding return types,
+in Yacc the next section is going to be the grammar of the
+language, and finally the last section is going to be the C functions which are
+going to be associated with each file. Due to the structured nature of the
 programming language it made it easier to find area of interest i.e. if you want
-to change the manner which lex tokenize strings you can jump to the middle of the
-file. therefore, for this reason yacc and lex are going to adhere to the
-\emph{structured programming principle} and as a consquence making the lnanguage
-readable.\par
+to change the manner which Lex tokenize strings you can jump to the middle of the
+file. Therefore, for this reason Yacc and Lex are going to adhere to the
+\emph{structured programming principle} and as a consequence making the language
+more \emph{readable}.\par
 
-a good thing with yacc is that it was really easy to pick up as it was heavily
-coupled to the c language. therefore, they was not that much to learn in the
-yacc language except on how it would process its language grammars. \par
+A good thing with Yacc is that it was really easy to pick up as it was heavily
+coupled to the c language. Therefore, they was not that much to learn in the
+Yacc language except on how it would process its language grammars. \par
 
 \section{scripting languages}
 
