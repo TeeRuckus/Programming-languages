@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.16)  25 OCT 2021 18:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.16)  25 OCT 2021 19:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -905,21 +905,30 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 \openout6 = `"Programming languages report.lot"'.
 
 
-[4] [1] [2] [3] [4]
+[4] [1]
+<figures/algoDisplay.png, id=23, 472.76625pt x 773.89125pt>
+File: figures/algoDisplay.png Graphic file (type png)
+<use figures/algoDisplay.png>
+Package pdftex.def Info: figures/algoDisplay.png  used on input line 213.
+(pdftex.def)             Requested size: 230.46576pt x 377.26161pt.
+<figures/stack.png, id=25, 538.01pt x 653.44125pt>
+File: figures/stack.png Graphic file (type png)
+<use figures/stack.png>
+Package pdftex.def Info: figures/stack.png  used on input line 219.
+(pdftex.def)             Requested size: 230.46576pt x 279.9074pt.
+ [2] [3 <./figures/algoDisplay.png> <./figures/stack.png>] [4]
 
-LaTeX Warning: Reference `perl:demo' on page 5 undefined on input line 372.
+LaTeX Warning: Reference `perl:demo' on page 5 undefined on input line 376.
 
+[5]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
-84.
-(/usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
+88.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [5] [6] [7]
+) [6] [7]
 (./Programming languages report.aux)
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package logreq Info: Writing requests to '"Programming languages report".run.xm
 l'.
@@ -927,10 +936,10 @@ l'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19041 strings out of 478994
- 331481 string characters out of 5858184
- 1415481 words of memory out of 5000000
- 36235 multiletter control sequences out of 15000+600000
+ 19056 strings out of 478994
+ 331782 string characters out of 5858184
+ 1416603 words of memory out of 5000000
+ 36247 multiletter control sequences out of 15000+600000
  428072 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  95i,11n,102p,763b,3815s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -941,10 +950,10 @@ ve/2021/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2021
 /texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2021/texmf
 -dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2021/texmf-dist/f
 onts/type1/urw/palatino/uplri8a.pfb>
-Output written on "Programming languages report.pdf" (11 pages, 127130 bytes).
+Output written on "Programming languages report.pdf" (11 pages, 163894 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
- 43 compressed objects within 1 object stream
+ 69 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

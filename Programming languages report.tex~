@@ -200,24 +200,49 @@ case insensitive further adding on onto the \emph{unreliability} of the Fortran
 programming language, as how would the programme know that they're going to be
 accessing the correct variable or constant in the programme.\par
 \section{ALGOL 68}
-
 \subsection{ALGOL 68: Fizz-buzz Activation Record}
+The programmed fizz buzz algorithm doesn't make use of actual functions, although
+it makes use of in-built functions such as the print statement, and the read
+statement. Therefore, the display can be illustrated as shown in figure \ref{ALGOL:Display},
+and the accompanying static and dynamic chaining is demonstrated in figure \ref{ALGOL:Chaining}.
+The construction of the display is based on the submitted ALGOL 68 implementation
+of fizz-buzz.
+\begin{figure}[!htb]
+  \centering
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{figures/algoDisplay.png}
+    \caption{The display of the Fizz Buzz algorithm}
+    \label{ALGOL:Display}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{figures/stack.png}
+    \caption{Static and dynamic chaining of the Fizz Buzz programme}
+    \label{ALGOL:Chaining}
+    \end{minipage}
+\end{figure}
 
-\subsection{algo 68: reflectoin}
-writting the fizz buzz programme with algo 68 was more plesant than fortran. algo
-68 is starting to represent the langauges which we're more accostumed too. alog 68
-strongly reminds me of the bash scripting language as the constructs are going
-to end with a word instead of terminating delimeter. \par
+\subsection{ALGOL 68: reflection}
+Writing the fizz buzz programme with ALGOL 68 was more pleasant than FORTRAN as
+ALGOL 68 has started to represent languages which I am more accustomed too. \par
 
-algo 68 is going to be a language which is going to be scopped hence, the
+ALGOL 68 strongly reminds me of the bash scripting language as the constructs are going
+to end with a word instead of terminating delimiter Therefore, looking at ALGOL 68
+code is a lot easier, as all the constructs are clearly structured resulting in
+compliance with the \emph{structured programming principle}. Additionally, since
+the language is highly structured it's gong to be easier to read hence, complying
+with the \emph{readability principle}. To me it almost seems like modern day
+programming language structure was derived from ALGOL 68.\par
+
+ALGOL 68 is going to be a language which is going to be scoped hence, the
 variables which are in a \emph{begin} and \emph{end} block are only going to be
 found to be accessed within that block, and variables which are going to be defined
 in any given construct are going to be only accessed within those constructs.
-therefore in algo 68 you're not going to get the side effects whichy you may get in
-fortran as the variables are going to be protected by scope therfore, algo 68
+Therefore in ALGOL 68 you're not going to get the side effects which you may get in
+FORTRAN as the variables are going to be protected by scope resulting in ALGOL 68
 adhering to the \emph{information hiding principle}. \par
 
-additionally, due to the introduction of scope, and the introduction of clear
+Moreover, due to the introduction of scope, and the introduction of clear
 termination of constructs, it's a lot easier to look at an algo 68 programme and
 get a good idea on what the intededed purpose of the programme is going to be
 hence, adhering to the \emph{readability principle}. since, the algo-68 is going
