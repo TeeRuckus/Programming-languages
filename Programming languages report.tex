@@ -106,8 +106,8 @@ talking about each of the sections which you're coding for
 
 \section{Programme Testing and Programme execution}
 Each programme folder in this assignment is going to have its own independent
-\textbf{README.md}, and \textbf{run.sh} files. Therefore, all the marker has to 
-do is to execute the run.sh file by typing \emph{./run.sh}. Although, practical 
+\textbf{README.md}, and \textbf{run.sh} files. Therefore, all the marker has to
+do is to execute the run.sh file by typing \emph{./run.sh}. Although, practical
 four doesn't contain a run.sh file but, instructions in the read me file has
 being left in the read me file on how to execute the individual scripts.
 
@@ -301,8 +301,8 @@ strucutres such as arrays. \par
 \subsection{Reflection}
 I really enjoyed the yacc and lex practical, although it was very time consuming
 and painful to do. Overal, it was a good experience to see how the basis of
-a programming langauge are going to be constructed. Furthermore, doing this 
-practical gave on appreciation of some of the fundemental concepts taught in my 
+a programming langauge are going to be constructed. Furthermore, doing this
+practical gave on appreciation of some of the fundemental concepts taught in my
 computer science degrees.\par
 
 A thing point of frustration while writign the programme is that the \emph{yytext}
@@ -312,29 +312,182 @@ it but, as soon as I ran the programme through yacc it produced segmentation fau
 Since, I thought the variable type YYSTYPE was just a warning, and it was
 going to be harmless I over looked the warning and that led into many hours of
 trying to discover on why my programme was producing a segementation fault. I
-would have wished the yacc compilier would have treated the data type mistmatch 
+would have wished the yacc compilier would have treated the data type mistmatch
 as an actually error as other languages such as Java would have. Therefore,
-since the compilier will allow access of invalid memory addresses this going to 
+since the compilier will allow access of invalid memory addresses this going to
 make the yacc language less \emph{reliable} to write in. \par
 
 Yacc and lex code are both going to be segemented into sections, whereby the
-first section is going to be the imports into the programme, and then after that 
+first section is going to be the imports into the programme, and then after that
 it's going to be either the yacc or lex definitions. The next section in the lex
 file is going to be the tokenising rules and the corresponding code it is going
-to send to yacc, in yacc the next section is going to be the grammar of the 
+to send to yacc, in yacc the next section is going to be the grammar of the
 language, and finally the last section is going to be the C functions which are
-going to be associated with each file. Due to the structured nature of the 
+going to be associated with each file. Due to the structured nature of the
 programming language it made it easier to find area of interest i.e. if you want
-to change the manner which lex tokenize strings you can jump to the middle of the 
-file. Therefore, for this reason yacc and lex are going to adhere to the 
+to change the manner which lex tokenize strings you can jump to the middle of the
+file. Therefore, for this reason yacc and lex are going to adhere to the
 \emph{structured programming principle} and as a consquence making the lnanguage
 readable.\par
 
-A good thing with yacc is that it was really easy to pick up as it was heavily 
+A good thing with yacc is that it was really easy to pick up as it was heavily
 coupled to the C language. Therefore, they was not that much to learn in the
 yacc language except on how it would process its language grammars. \par
 
 \section{Scripting languages}
+
+
+\subsection{Scripting languages: reflection}
+
+\subsubsection{Bash:} Although, I have used bash since starting my computer science
+degree, and I use it in my daily navigation of the terminal environment I have
+always find it hard to write. The reason why I think that bash scripting is hard
+to write is becuase it doesn't follow the common conventions which I am accostumed
+to with C, Java, and python.For example, if you want to access a variable it's not
+just enought to use its name like how you would in Java, C and Python, you will have
+to have the variable name with a \$ then you can use the desired variable. Furthermore,
+if you want to declare a variable as somethign you will have to be cautious of your
+spacing in bash you can't have spaces before or after the assignment of your variable,
+in languages such as Java, C, and Python they don't really care on how much spaces you
+will have. These just some of bash conventions which are different from the
+languages which I am accoustmed too hence, while scripting in bash I will have
+would have to be thinking of a lot more things than I would be typically doing
+while programming hence fort his reason bash has low \emph{writability}. \par
+
+In conjuction to the point discussed above, bash will have different methods to
+be able to access specific commands. You can access a command by just typing
+the name of the command, and with some of commands you will have to access them
+using the back-tick (`) which adds another layer of thought  while scripting.
+The question then becomes "Am I accessing this command the right way", which is
+typically not a question I would ask myself while writing other languages.
+Therefore, in this regards bash will lack \emph{regulairty}, and will add another
+layer of diffuculty for \emph{writability}.
+
+
+\subsubsection{Ruby} Out of the three scripting languages done, ruby was the
+easiest one to write in because it's a close represention to the Python scripting
+language, and java script to some extent. Therefore, given that I have had a
+vast exprienc; in Python in relation to industry projects, teaching, and
+univeristy assignment the \emph{wrtiability} of Ruby was far better than bash,
+and perl.\par
+
+Furthermore, due to the close representation of ruby to other popular scripting
+languages this makes ruby very easy to learn, and to understand what is being
+conveyed code. Additionally, the syntax of ruby is very simplisitic, and the
+strucutre of the language closly represents what the programme's aim  is  going
+to be. Therefore, in this manner Ruby also adheres to the \emph{simplicity}
+programming principle.
+
+\subsubsection{Perl} In relation to the three scripting langauges I would place
+Perl as a middle child in relation to \emph{writiability}. Perl borrows syntatic
+constructs, and conventions from both the bash scripting language, and modern
+popular scripting languages such as Python and java script. For example Perl
+relays heavily on annoymous functions and calling functions within a function
+as demonstrated in figure \ref{Perl:demo} which is a design
+patern which is heavily used in Javascript, and a little bit in Java. Additionally,
+Perl only had fewer deviations from the conventional strucutre of modern day programming
+for example with perl, it doesn't really matter on how many blanks you have after
+an assignment which follows normal programming conventions. Although, like bash
+if you want to access a variable, the variable has to be preceeded by a dollar-sign
+("\$"). Therefore, Perl borrows ideas from modern languages which I am accoustmed too
+and borrow ideas from unix based scripting languages therefore, placing Perl as
+a middle child in relation to \emph{writability}.
+
+\begin{figure}[!htp]
+    \begin{problem}
+        \begin{verbatim}
+        #files wanted is a reference to the address of a function
+        find(\&filesWanted, $searchPath)
+        sub filesWanted{
+                #code for your function
+            }
+        \end{verbatim}
+    \end{problem}
+    \caption{Demonstration of Perl's design strucutre}
+    \label{Perl:demo}
+\end{figure}
+
+\section{Small-talk}
+
+\subsection{Small-talk: Discussion}
+
+\subsection{Small-talk: Reflection}
+
+Constructing the conditional statements was the hardest part of the small talk
+practical this is because small talk doesn't natively have if-else-if statements,
+and only has if-else statemnets. To simulate the if-else-if statement nature of the
+programme, Small-talk will require you to nest an if-else staement inside the else
+clause of the parent if-else statement as demonsstraed in figure \ref{ST:IF_ELSE}.For,
+this reason it made writing the Small-talk programme more diffucult as I had to
+keep a consicious note on the location and the number of terminating square brackers
+("]") hence, in this regards Small-talk will have low \emph{writability}. Additionally,
+for this reason, it's diffucult to see the purpose of the if-else structure from firs
+glance as compared to the native if-else-if statements found in C, Java and Python. To
+be able to understand the structure it would required the programme to actually
+carefully read the programme and in this regards Small-talk is going to have
+low \emph{readability}.
+
+\begin{figure}[!htp]
+    \begin{problem}
+        \begin{verbatim}
+        <True condition> ifTrue: [ <statment ] ifFalse:
+        [ <child if-else-statement> ]
+        \end{verbatim}
+    \end{problem}
+    \caption{Small talk if-else-if statments}
+    \label{ST:IF_ELSE}
+\end{figure}
+
+\section{C++}
+
+\subsection{C++:Discussion}
+
+\subsection{C++: Reflection}
+Out of the covered languages in the Programmning languages assignment, this was
+probably the most intutive, easiest, and most well rounded programming languages as
+compared to the ones coverred in the unit. This is due to that C++ is very similar
+to programming languges which I have experience namely Java and C. Therefore,
+writing the C++ programme was a lot easier as it follows most of the programing
+principles which I am accoustmed too. C++ is \emph{reliable} as the complier is
+very helpful in it's error messages and wil tell you exactly what is wrong in
+your code. Additionally, the C++ is almost the same as Java and C syntax hence,
+it was easier for me read the C++ programmes and to know the funcion of a
+porgramme therefore, in this regards C++ is \emph{syntacically} consistent with
+other languages; C++ is \emph{regular} as all groups of conditions and constructs
+are going to be the same throughout the language; and C++ has the same structure
+as Java, and C therefore it's \emph{structually} consistent with those languages
+and also the strucutre of the language represents it's function and purpose therefor
+adhering to the \emph{structured programming} principle.\par
+
+C++ is a language which encourages the use of streams, and most of its constructs
+is written to be used in conjuction with streams. However, C++ doesn't enforce
+the use of streams as it iwll allow you to do operations in the manner which you're
+accoustemed too hence, making the barrier in learning C++ a lot smaller, as other
+languages will force you in doing thing their way. Therefore, for that reason
+C++ is a lot easier to learn and to pick up if you have prior exprience to Java,
+and C.
+
+\section{Prolog}
+
+\subsection{Prolog: Discussion}
+Throughout my experience of programming I have only dealt with imperative languages
+hence, languages which you tell what is should do at each every single step.
+Prolog is a logical language whereby it's paradigm is that the programmer is
+going to specify the world's rules and the world's facts, and the language is
+going to make conclusions based on those rules and facts. Prolog is going to be
+based on the idea of a decision tree where it will use forward chaining and
+backwards chaining to form conclusions. For this reason writing the Prologa
+
+
+\subsection{Prolog: Reflection}
+
+\section{Scheme}
+
+\subsection{Scheme: Discussion}
+
+\subsection{Scheme: Reflection}
+
+
 
 
 
