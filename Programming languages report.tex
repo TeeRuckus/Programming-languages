@@ -363,70 +363,78 @@ Yacc language except on how it would process its language grammars.
 
 \section{scripting languages}
 
+\subsection{Scripting languages: discussion}
+Although, I have used bash since starting my computer science
+degree, and I use it in my daily navigation of the terminal environment I have
+always find it hard to write in bash script. The reason why I think that bash
+scripting is hardest to write is because it doesn't follow the common conventions
+which I am accustomed to with C, Java, and Python. For example, if you want
+to access a variable, it's not just enough to use its name like how you would
+in Java, C and Python. You would have to access the variable name with a
+\$ then you can use the desired variable.Furthermore,
+if you want to declare a variable as something you will have to be cautious of your
+spacing as in bash you can't have spaces before or after the assignment of your variable,
+in languages such as Java, C, and Python they don't really care on how much spaces you
+will have. These just some of bash conventions which are different from the
+languages which I am accustomed too. Therefore, scripting is more difficult than
+writing a programme in Java, C, and Python. Additionally, for this reason the
+bash scripting was the hardest to write the find config file as they're going to
+be a lot closer to modern day languages as discussed in the reflection.
 
 \subsection{scripting languages: reflection}
 
-\subsubsection{bash:} although, i have used bash since starting my computer science
-degree, and i use it in my daily navigation of the terminal environment i have
-always find it hard to write. the reason why i think that bash scripting is hard
-to write is becuase it doesn't follow the common conventions which i am accostumed
-to with c, java, and python.for example, if you want to access a variable it's not
-just enought to use its name like how you would in java, c and python, you will have
-to have the variable name with a \$ then you can use the desired variable. furthermore,
-if you want to declare a variable as somethign you will have to be cautious of your
-spacing in bash you can't have spaces before or after the assignment of your variable,
-in languages such as java, c, and python they don't really care on how much spaces you
-will have. these just some of bash conventions which are different from the
-languages which i am accoustmed too hence, while scripting in bash i will have
-would have to be thinking of a lot more things than i would be typically doing
-while programming hence fort his reason bash has low \emph{writability}. \par
-
-in conjuction to the point discussed above, bash will have different methods to
-be able to access specific commands. you can access a command by just typing
-the name of the command, and with some of commands you will have to access them
-using the back-tick (`) which adds another layer of thought  while scripting.
-the question then becomes "am i accessing this command the right way", which is
+\subsection{Bash} In conjunction to the points discussed above, bash will have different methods to
+be able to access specific commands.The first method is going to be through the
+name of the command, and the second method is going to be through the use of
+the back-tick(`). These methods can't be sued inter-changeably some commands will
+only work with the back tick method, and some of them with the name method hence,
+adding another layer of complexity  while scripting. Therefore, the question then
+becomes "am I accessing this command the right way", which is
 typically not a question i would ask myself while writing other languages.
-therefore, in this regards bash will lack \emph{regulairty}, and will add another
-layer of diffuculty for \emph{writability}.
+Therefore, in this regards bash will lack \emph{regularity}, and will add another
+layer of difficulty while writing the language.\par
 
 
-\subsubsection{ruby} out of the three scripting languages done, ruby was the
-easiest one to write in because it's a close represention to the python scripting
-language, and java script to some extent. therefore, given that i have had a
-vast exprienc; in python in relation to industry projects, teaching, and
-univeristy assignment the \emph{wrtiability} of ruby was far better than bash,
-and perl.\par
+\subsubsection{Ruby} out of the three scripting languages done, ruby was the
+easiest one to write in because it's a close representation to the python scripting
+language, and java-script to some extent. Therefore, given that I have had a
+vast experience in python in relation to industry projects, teaching, and
+university assignment the \emph{wrtiability} of ruby was far better than bash,
+and Perl.\par
 
-furthermore, due to the close representation of ruby to other popular scripting
+Additionally, due to the close representation of ruby to other popular scripting
 languages this makes ruby very easy to learn, and to understand what is being
-conveyed code. additionally, the syntax of ruby is very simplisitic, and the
-strucutre of the language closly represents what the programme's aim  is  going
-to be. therefore, in this manner ruby also adheres to the \emph{simplicity}
+conveyed in code. Furthermore, the syntax of ruby is very simplistic, and the
+structure of the language closely represents what the programme's aim.
+Therefore, in this manner ruby also adheres to the \emph{simplicity}
 programming principle.
 
-\subsubsection{perl} in relation to the three scripting langauges i would place
-perl as a middle child in relation to \emph{writiability}. perl borrows syntatic
+\subsubsection{Perl} in relation to the three scripting languages I would place
+Perl as a middle child in relation to \emph{writiability}. Perl borrows syntactic
 constructs, and conventions from both the bash scripting language, and modern
-popular scripting languages such as python and java script. for example perl
-relays heavily on annoymous functions and calling functions within a function
+popular scripting languages such as python and java script. For example Perl
+relays heavily on anonymous functions and calling functions within a function
 as demonstrated in figure \ref{perl:demo} which is a design
-patern which is heavily used in javascript, and a little bit in java. additionally,
-perl only had fewer deviations from the conventional strucutre of modern day programming
-for example with perl, it doesn't really matter on how many blanks you have after
-an assignment which follows normal programming conventions. although, like bash
-if you want to access a variable, the variable has to be preceeded by a dollar-sign
-("\$"). therefore, perl borrows ideas from modern languages which i am accoustmed too
-and borrow ideas from unix based scripting languages therefore, placing perl as
+pattern which is heavily used in java-script, and a little bit in Java. Additionally,
+Perl only had fewer deviations from the conventional structure of modern day programming languages
+for example with Perl, it doesn't really matter on how many blanks you have after
+an assignment which follows normal programming conventions. Although, like bash
+if you want to access a variable, the variable has to be proceeded with a dollar-sign
+("\$"). Therefore, Perl borrows ideas from modern languages which I am accustomed too
+and borrow ideas from Unix based scripting languages therefore, placing Perl as
 a middle child in relation to \emph{writability}.
 
 \begin{figure}[!htp]
     \begin{problem}
         \begin{verbatim}
+
         #files wanted is a reference to the address of a function
+
         find(\&filesWanted, $searchPath)
         sub filesWanted{
+
                 #code for your function
+
             }
         \end{verbatim}
     \end{problem}
