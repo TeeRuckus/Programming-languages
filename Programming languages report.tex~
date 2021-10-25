@@ -67,8 +67,8 @@
 %I want to save space when I am writing my document, so I am going to have
 %everything as the default values for the system
 %\setlength{\parindent}{0pt}
-\setlength{\parskip}{1.5em}
-\onehalfspacing
+\setlength{\parskip}{1.0em}
+%\onehalfspacing
 %\setstretch{1.25}
 %making a variable for where all my results are going to be stored
 \newcommand\pathFiles{"summary/"}
@@ -99,298 +99,271 @@
 %----------------------------------------------------------------------------------------
 %	Programming Languages Report
 %----------------------------------------------------------------------------------------
-
 \section{Introduction}
-you will need to write this one last, as you will need to know what you're
-talking about each of the sections which you're coding for
 
 \section{Programme Testing and Programme execution}
 Each programme folder in this assignment is going to have its own independent
-\textbf{README.md}, and \textbf{run.sh} files. Therefore, all the marker has to
-do is to execute the run.sh file by typing \emph{./run.sh}. Although, practical
-four doesn't contain a run.sh file but, instructions in the read me file has
-being left in the read me file on how to execute the individual scripts.
+\textbf{README.md}, and a \textbf{run.sh} file. Therefore, all the marker has to
+do is to execute the run.sh file by typing \emph{./run.sh} and that will demonstrate
+the functionality of my programme. It should be noted that practical
+four doesn't contain a run.sh file instructions outlining on how the scripts
+should be executed has being left in README.md.
 
-\section{Fortran}
-
+\section{FORTRAN}
 \subsection{Fortran: Discussion}
-Fortran was a first generation programming language which was mainly based on
-the punch card system which was used at the times \textbf{site me}.
-Fortran was a language intended for mathematical operations which can be used
-in the field of engineering and applied sciences. The name Fortran embodies this
-purpose as Fortran stands for \emph{Formula translator}.\par
+Fortran was based on the programming paradigm of the punch card system which imposed specific
+rules on Fortran. Which included the following: the first column of each row is going to be reserved for
+the comment character which is either a c or an asterisk ("c" or "*"); column one to five of each row
+is going to be reserved for statements or labels; column six is going to be
+reserved for the continuation of a command from the previous line; commands will
+terminate on column seventy-two; and column seventy-three
+to eighty are going to be reserved for sequence numbers. As a consequence, this
+made Fortran more intellectually involving compared to previously written
+languages of Java, C and Python. \par
 
-Due to Fortran being based on the punch card system this imposed specific
-rules on the programming language.Including the following:
-the first column of each row is going to be reserved for
-the comment character which is either "c" or "*"; column one to five of each row
-are going to be reserved for statements or labels; column six is going to be
-reserved for the continuation of a command from the previous line; each of your
-commands given a row much terminate on column seventy-two; and column seventy-three
-to eighty are going to be reserved for sequence numbers, to just name few of the rules
-which are going to emposed onto Fortran. As a consquence of some of these rules,
-this made Fortran more intellectually involving compared to previously written
-languages
-of the plethora of rules
-to be memorised this made it more intellectually involving as compared to
-previoulsy written languages of Java, C, and Python. \par
+Programming in Fortran I had to be more conscious on the current column number
+which is typically not a behaviour I do while programming in the named languages.
+In the named languages I would typically choose to keep each line below 80 characters
+to make it easier for others to read the my code. Therefore, due to this imposed
+rule Fortran's \emph{writability} is not like the named languages. \par
 
-\subsubsection{Fortran: Comparison with written languages}
+Fortran's variables is only limited to one-to-six characters long limiting the
+expressivity of variables in Fortran. In some cases six characters is not enough
+to fully explain the purpose of variable hence, compromises in variable naming
+will have to be made. Compared to Java, C and Python the programmer can fully
+express the purpose of variable as they is not limitation in variable name
+length. Therefore, as demonstrated Fortran is less expressive in variable naming
+as compared to Java, C and Python. Additionally, due to the limitation of the
+variable length Fortran as well is going to break the \emph{zero-one-infinity}
+programming principle. \par
 
-While writting the fizzbuzz programme in Fortran I noticed I was thinking more than I typically would be
-while programming, and fortran has a lot of similarities to the named programming
-languages. \par
+Fortran doesn't support reserved words causing the change of behaviour of functions,
+and resulting in a less \emph{reliable} programming experience. Programming in
+Fortran requires double checking variable names to ensure that they were not
+overriding in-built functions as the complier will not raise these incidents as
+errors. As compared to the named languages the complier will raise the incidents
+as errors, and the programmer typically would not have to concern themselves
+with the naming of variables. Therefore, due to this Fortran will require the
+programmer to involve themselves with behaviours which they're not accustomed too.
+Additionally, since Fortran will allow the re-definition of in-build functions
+meaning that in a programming project an intern can override a in-built function
+to do something else and they would not know as the complier will not flag it i.e.
+the do-while loop can be over ride to add one instead of looping. Hence, for this
+reason programming in Fortran in less \emph{reliable} as compared to the named
+languages.\par
 
-While programming in Fortran I had be consistently worrying about the current
-column numbber which I was currently in, this is not a behaviour I typically
-do while writing C, Java, and Python programs. Typically writting these languages
-I don't really care which line number or column in, I would typically choose to
-keep each line below 80 characters to make it easier for others to read the my code.
-Although, in Fortran this is going to be a hard imposed rule. \par
+Additionally, Fortran is less \emph{reliable} than Java, C and Python due the compilation
+process. Fortran doesn't look for uninitialised variables hence, Fortran will
+allow you to compile and run a programme even if the variable hasn't be declared
+and not assigned to anything. Additionally, during execution the uninitialised
+variable will be a random memory address thus, any operations in the programme
+will be done to that specific memory address which in some cases can lead into
+unintended actions resulting, in Fortran breaking the \emph{security} and
+\emph{defense in depth} programming principle. As compared to the named languages
+the complier will raise this incident as an \emph{uninitialised variable error}
+therefore, stopping the user from accessing memory which they should not be accessing.
+Therefore, as demonstrated Fortran in less \emph{reliable} and less \emph{secure}
+than the names languages.\par
 
-Furthermore, Fortran variables can be only limited to one to six characters long
-therefore, while I was programming I had to always double check my variable names
-to ensure that they're going to be below six characters hence, limiting my expressivity
-in the purpose of variable. As compared to the name programming languages, I didn't
-have to think about the length of my variable names I typically would make them
-a length which is going to be sufficient in discribing their purpose hence, in the
-named programming languages I was able to express myself more. \par
-
-
-Additionally, due to the lack of reserved words in the Fortran language, I had  to
-always double check all my Fortran variables didn't have any other intended
-purposes as the Fortran complier will not tell you if a variable was reserved or
-not, and it will just allow you to override that variable. As compared to the named
-programmed languages I would typically just express the problem in the language,
-and rely on the compilier to warn me if I have tried to override a reserved word.
-Therefore, while programming in Fortran I had to rely more on myself, and in other
-languages I can rely more on the complier.\par
-
-Lastly, in Fortran if you had forgetten to declare a variable the fortran
-complier would not warn you of your mistake but, instead will print our a random
-memory address. As compared to the name programming languages, the complier
-would warn you of your mistake immeditely and the line number which the mistake
-had occured. Therefore in Fortran you would have to spend more time debugging
-the code at hand.\par
-
-Similarities of Fotran as compared to the named programming languages is that
+Similarities of Fortran as compared to the named programming languages is that
 the first character of each variable has to start with a letter and can't start
 with a number, Fortran will require you to declare the types of your variables
-same as C, and Java. Furthermore, Fortran will require the programme field to be
+same as C, and Java. Furthermore, Fortran will require the programme fields to be
 the same name as the current file name which is a similar idea which is seen in
-Java wherby the file name has to be the same as the class name, and Fortran will
-require terminating statements for each command as seing in languages such as
-Java, and C.
+java whereby the file name has to be the same as the class name, and Fortran will
+require terminating statements for each command same as Java, and C.
 
-\subsection{Fortran: Reflection}
-
-Fortran doesn't really have any scope as consquence, you were planning to build
-a full operational programme all the variables can be accesssed from anywhere
-therefore, unattended side affects may occur in the excution of the programme as
-the variables can be modified by anything as they're not protected by scope.
-Therefore, this is going to make it harder to debugg the current programme, as the
-programmer would have to have full knowledge of the programme as a hole instead
-of knowledged of the current scopes. As a consqunce, this is going to make Fortran
-diffucult to strucuture code in the appropriate heirachies hence, violating the
-\emph{structured programming principle}. Additionally, since they is not really
-any scope in Fortran this is going to make it hard to hide the implmentations of
-any subroutines and fucntions therefore violating the \emph{information hiding
+\subsection{Fortran: reflection}
+Fortran doesn't have scope as consequence it's difficult to plan and write
+a full programme. As a result of no scope variables can be accessed from anywhere
+causing unattended side effects as they is not protection from scope. Therefore,
+this is going to make it harder to debug larger programmes, as the
+programmer would have to have full knowledge of the programme instead
+of knowledge of the current scope. Making Fortran difficult to structure code
+in the appropriate hierarchies hence, violating the \emph{structured programming principle}.
+Additionally, Fortran not allowing the hiding the implementation of abstract data
+structures, and implementations violating the \emph{information hiding
 principle}.\par
 
 
-As discussed in the previous section the Fortran complier is not helpful as it
-doesn't warn the programmer of common programming mistakes. Therefore, one small
-mistak made by the programme can result of the built programme not running as
-intetended. The complier in modern languages is more of a helping guide in writing
-correct and relabile code therefore, since Fortran complier doesn't warn the
-programmer about these mistakes this makes the programmes exprience less reliable
-violiting the \emph{reliability principle}.\par
+I found Fortran a lot harder to debug as the complier doesn't display helpful
+messages. During this programming assignment I spent hours trying to figure
+out why my programme was not working, although the logical structure of the
+programme was correct. To only find out what it was due to that I had not
+initialised a variable properly. Therefore, Fortran is not a language I would
+personally use for large scale projects as the complier is not helpful. Additionally,
+due to one small mistake breaking a programme Fortran is not \emph{reliable}.\par
 
-In relation to Fortran violating the \emph{reliability principle}, the complier
-will see all commands and variables as upper cases hence, making the language
-case insensitive. Further adding on onto the unrealiblity of the Fortran
-programming language.\par
 
-As discussed previously Fortran variable names will have to be between one to
-six characters long. The principle of \emph{zero one ifinity} outlines thtat the
-only valid length of anything is going to be either one, zero or ifinity. As can
-be seeing with the variable length names Fortran clearly violates the
-\emph{zero one ifinity} principle.
+Additionally, the complier will see all commands and variables as upper cases hence, making the language
+case insensitive further adding on onto the \emph{unreliability} of the Fortran
+programming language, as how would the programme know that they're going to be
+accessing the correct variable or constant in the programme.\par
+\section{ALGOL 68}
 
-\textbf{talk about how it violates the readibility principle}
+\subsection{ALGOL 68: Fizz-buzz Activation Record}
 
-\subsection{Fortran: Testing and compiling}
-\textbf{you will actually need to go and do this at uni}
-
-\subsubsection{Results from running programme}
-\textbf{you will actually need to go and do this at uni}
-
-\section{Algo68}
-
-\subsection{Algo 68: Fizzbuzz activation record}
-\textbf{Don't forget a picture of it here dawg}
-
-\subsection{Algo 68: Reflectoin}
-Writting the fizz buzz programme with Algo 68 was more plesant than Fortran. Algo
-68 is starting to represent the langauges which we're more accostumed too. Alog 68
+\subsection{algo 68: reflectoin}
+writting the fizz buzz programme with algo 68 was more plesant than fortran. algo
+68 is starting to represent the langauges which we're more accostumed too. alog 68
 strongly reminds me of the bash scripting language as the constructs are going
 to end with a word instead of terminating delimeter. \par
 
-Algo 68 is going to be a language which is going to be scopped hence, the
-variables which are in a \emph{BEGIN} and \emph{END} block are only going to be
+algo 68 is going to be a language which is going to be scopped hence, the
+variables which are in a \emph{begin} and \emph{end} block are only going to be
 found to be accessed within that block, and variables which are going to be defined
 in any given construct are going to be only accessed within those constructs.
-Therefore in Algo 68 you're not going to get the side effects whichy you may get in
-Fortran as the variables are going to be protected by scope therfore, Algo 68
+therefore in algo 68 you're not going to get the side effects whichy you may get in
+fortran as the variables are going to be protected by scope therfore, algo 68
 adhering to the \emph{information hiding principle}. \par
 
-Additionally, due to the introduction of scope, and the introduction of clear
-termination of constructs, it's a lot easier to look at an Algo 68 programme and
+additionally, due to the introduction of scope, and the introduction of clear
+termination of constructs, it's a lot easier to look at an algo 68 programme and
 get a good idea on what the intededed purpose of the programme is going to be
-hence, adhering to the \emph{readability principle}. Since, the algo-68 is going
+hence, adhering to the \emph{readability principle}. since, the algo-68 is going
 to be highly structured this also adheres to the \emph{structured programming}
-principle. As a consquence to these observation, wrting a programme in Algo-68
-was a lot easier than writing a programme in Fortran.
+principle. as a consquence to these observation, wrting a programme in algo-68
+was a lot easier than writing a programme in fortran.
 
-\section{ADA}
-\subsection{ADA: comparison with other buble sorts}
-A difference between the two lagnauges is going to be the way which they treat
-fucntions. In C the construction of function which will return nothing or something
-is going to have the same prototype, ADA will actually will clearly segement these
-two classes of functions. Functions which are going to return nothing are going
+\section{ada}
+\subsection{ada: comparison with other buble sorts}
+a difference between the two lagnauges is going to be the way which they treat
+fucntions. in c the construction of function which will return nothing or something
+is going to have the same prototype, ada will actually will clearly segement these
+two classes of functions. functions which are going to return nothing are going
 to be referred to as \emph{procedures}, and functions which are going to return
 something are going to be refferred to as \emph{sub-routines}. \par
 
-A difference between C and ADA is going to be the choice of terminating characters
-for commands. In C the end of a construct such as a "if and else" statement will
-need to be terminated withe a semi-colon, and in C the end of a "if and else"
+a difference between c and ada is going to be the choice of terminating characters
+for commands. in c the end of a construct such as a "if and else" statement will
+need to be terminated withe a semi-colon, and in c the end of a "if and else"
 statement is going to be terminated with a right parenthesis.\par
 
-A similarity between C and ADA implementation is going to be found in the
-positioning of the functions in the file. In C this phenomenon is going to be
+a similarity between c and ada implementation is going to be found in the
+positioning of the functions in the file. in c this phenomenon is going to be
 refferred to as forward declartion whereby, the functions (procedures) have to
-be declared before the main body of code otherwise both the ADA and C compilier
-will complain that it doesn't kow what the following funciton is going to be. This
-idea will also extend to variable decelartoin positioning as well, in C-89
+be declared before the main body of code otherwise both the ada and c compilier
+will complain that it doesn't kow what the following funciton is going to be. this
+idea will also extend to variable decelartoin positioning as well, in c-89
 variables will have to be decaled first before any commands are written, and in
-ADA variables and types will have to be declared before the \emph{begin} key word.\par
+ada variables and types will have to be declared before the \emph{begin} key word.\par
 
-Another similarity point between the ADA and C implementation is going to be the
+another similarity point between the ada and c implementation is going to be the
 use of pointer manipulation in order to swap any element which is going to be greater
 than the element which is going to be infront of it as both algorithms will
 derefrence that memory location to get what is going to be stored their.\par
 
-C and ADA are going to be both strongly type languages. Meaning that that a variable
+c and ada are going to be both strongly type languages. meaning that that a variable
 or a data structure must be declared with a type before they're going to be used.
-This idea will extend to function imports as well, the type of the imports must be
+this idea will extend to function imports as well, the type of the imports must be
 declared before use
 
-\textbf{come back to this, I don't feel like writing it more}
+\textbf{come back to this, i don't feel like writing it more}
 
-Furthermore, ADA and C will both require you to import packages in order to be able
+furthermore, ada and c will both require you to import packages in order to be able
 to do simple commands such as print a satement to the screen, and to use data
 strucutres such as arrays. \par
 
-\subsection{ADA: reflection}
+\subsection{ada: reflection}
 \textbf{come back to this as well}
 
 
-\section{Yacc and Lex}
+\section{yacc and lex}
 
 
-\subsection{Reflection}
-I really enjoyed the yacc and lex practical, although it was very time consuming
-and painful to do. Overal, it was a good experience to see how the basis of
-a programming langauge are going to be constructed. Furthermore, doing this
+\subsection{reflection}
+i really enjoyed the yacc and lex practical, although it was very time consuming
+and painful to do. overal, it was a good experience to see how the basis of
+a programming langauge are going to be constructed. furthermore, doing this
 practical gave on appreciation of some of the fundemental concepts taught in my
 computer science degrees.\par
 
-A thing point of frustration while writign the programme is that the \emph{yytext}
-variable was going to be a type of YYSTYPE which is going to be yacc's own datatype
-for defining a string. Therefore, durind compilitation I didn't think much about
-it but, as soon as I ran the programme through yacc it produced segmentation faults.
-Since, I thought the variable type YYSTYPE was just a warning, and it was
-going to be harmless I over looked the warning and that led into many hours of
-trying to discover on why my programme was producing a segementation fault. I
+a thing point of frustration while writign the programme is that the \emph{yytext}
+variable was going to be a type of yystype which is going to be yacc's own datatype
+for defining a string. therefore, durind compilitation i didn't think much about
+it but, as soon as i ran the programme through yacc it produced segmentation faults.
+since, i thought the variable type yystype was just a warning, and it was
+going to be harmless i over looked the warning and that led into many hours of
+trying to discover on why my programme was producing a segementation fault. i
 would have wished the yacc compilier would have treated the data type mistmatch
-as an actually error as other languages such as Java would have. Therefore,
+as an actually error as other languages such as java would have. therefore,
 since the compilier will allow access of invalid memory addresses this going to
 make the yacc language less \emph{reliable} to write in. \par
 
-Yacc and lex code are both going to be segemented into sections, whereby the
+yacc and lex code are both going to be segemented into sections, whereby the
 first section is going to be the imports into the programme, and then after that
-it's going to be either the yacc or lex definitions. The next section in the lex
+it's going to be either the yacc or lex definitions. the next section in the lex
 file is going to be the tokenising rules and the corresponding code it is going
 to send to yacc, in yacc the next section is going to be the grammar of the
-language, and finally the last section is going to be the C functions which are
-going to be associated with each file. Due to the structured nature of the
+language, and finally the last section is going to be the c functions which are
+going to be associated with each file. due to the structured nature of the
 programming language it made it easier to find area of interest i.e. if you want
 to change the manner which lex tokenize strings you can jump to the middle of the
-file. Therefore, for this reason yacc and lex are going to adhere to the
+file. therefore, for this reason yacc and lex are going to adhere to the
 \emph{structured programming principle} and as a consquence making the lnanguage
 readable.\par
 
-A good thing with yacc is that it was really easy to pick up as it was heavily
-coupled to the C language. Therefore, they was not that much to learn in the
+a good thing with yacc is that it was really easy to pick up as it was heavily
+coupled to the c language. therefore, they was not that much to learn in the
 yacc language except on how it would process its language grammars. \par
 
-\section{Scripting languages}
+\section{scripting languages}
 
 
-\subsection{Scripting languages: reflection}
+\subsection{scripting languages: reflection}
 
-\subsubsection{Bash:} Although, I have used bash since starting my computer science
-degree, and I use it in my daily navigation of the terminal environment I have
-always find it hard to write. The reason why I think that bash scripting is hard
-to write is becuase it doesn't follow the common conventions which I am accostumed
-to with C, Java, and python.For example, if you want to access a variable it's not
-just enought to use its name like how you would in Java, C and Python, you will have
-to have the variable name with a \$ then you can use the desired variable. Furthermore,
+\subsubsection{bash:} although, i have used bash since starting my computer science
+degree, and i use it in my daily navigation of the terminal environment i have
+always find it hard to write. the reason why i think that bash scripting is hard
+to write is becuase it doesn't follow the common conventions which i am accostumed
+to with c, java, and python.for example, if you want to access a variable it's not
+just enought to use its name like how you would in java, c and python, you will have
+to have the variable name with a \$ then you can use the desired variable. furthermore,
 if you want to declare a variable as somethign you will have to be cautious of your
 spacing in bash you can't have spaces before or after the assignment of your variable,
-in languages such as Java, C, and Python they don't really care on how much spaces you
-will have. These just some of bash conventions which are different from the
-languages which I am accoustmed too hence, while scripting in bash I will have
-would have to be thinking of a lot more things than I would be typically doing
+in languages such as java, c, and python they don't really care on how much spaces you
+will have. these just some of bash conventions which are different from the
+languages which i am accoustmed too hence, while scripting in bash i will have
+would have to be thinking of a lot more things than i would be typically doing
 while programming hence fort his reason bash has low \emph{writability}. \par
 
-In conjuction to the point discussed above, bash will have different methods to
-be able to access specific commands. You can access a command by just typing
+in conjuction to the point discussed above, bash will have different methods to
+be able to access specific commands. you can access a command by just typing
 the name of the command, and with some of commands you will have to access them
 using the back-tick (`) which adds another layer of thought  while scripting.
-The question then becomes "Am I accessing this command the right way", which is
-typically not a question I would ask myself while writing other languages.
-Therefore, in this regards bash will lack \emph{regulairty}, and will add another
+the question then becomes "am i accessing this command the right way", which is
+typically not a question i would ask myself while writing other languages.
+therefore, in this regards bash will lack \emph{regulairty}, and will add another
 layer of diffuculty for \emph{writability}.
 
 
-\subsubsection{Ruby} Out of the three scripting languages done, ruby was the
-easiest one to write in because it's a close represention to the Python scripting
-language, and java script to some extent. Therefore, given that I have had a
-vast exprienc; in Python in relation to industry projects, teaching, and
-univeristy assignment the \emph{wrtiability} of Ruby was far better than bash,
+\subsubsection{ruby} out of the three scripting languages done, ruby was the
+easiest one to write in because it's a close represention to the python scripting
+language, and java script to some extent. therefore, given that i have had a
+vast exprienc; in python in relation to industry projects, teaching, and
+univeristy assignment the \emph{wrtiability} of ruby was far better than bash,
 and perl.\par
 
-Furthermore, due to the close representation of ruby to other popular scripting
+furthermore, due to the close representation of ruby to other popular scripting
 languages this makes ruby very easy to learn, and to understand what is being
-conveyed code. Additionally, the syntax of ruby is very simplisitic, and the
+conveyed code. additionally, the syntax of ruby is very simplisitic, and the
 strucutre of the language closly represents what the programme's aim  is  going
-to be. Therefore, in this manner Ruby also adheres to the \emph{simplicity}
+to be. therefore, in this manner ruby also adheres to the \emph{simplicity}
 programming principle.
 
-\subsubsection{Perl} In relation to the three scripting langauges I would place
-Perl as a middle child in relation to \emph{writiability}. Perl borrows syntatic
+\subsubsection{perl} in relation to the three scripting langauges i would place
+perl as a middle child in relation to \emph{writiability}. perl borrows syntatic
 constructs, and conventions from both the bash scripting language, and modern
-popular scripting languages such as Python and java script. For example Perl
+popular scripting languages such as python and java script. for example perl
 relays heavily on annoymous functions and calling functions within a function
-as demonstrated in figure \ref{Perl:demo} which is a design
-patern which is heavily used in Javascript, and a little bit in Java. Additionally,
-Perl only had fewer deviations from the conventional strucutre of modern day programming
+as demonstrated in figure \ref{perl:demo} which is a design
+patern which is heavily used in javascript, and a little bit in java. additionally,
+perl only had fewer deviations from the conventional strucutre of modern day programming
 for example with perl, it doesn't really matter on how many blanks you have after
-an assignment which follows normal programming conventions. Although, like bash
+an assignment which follows normal programming conventions. although, like bash
 if you want to access a variable, the variable has to be preceeded by a dollar-sign
-("\$"). Therefore, Perl borrows ideas from modern languages which I am accoustmed too
-and borrow ideas from unix based scripting languages therefore, placing Perl as
+("\$"). therefore, perl borrows ideas from modern languages which i am accoustmed too
+and borrow ideas from unix based scripting languages therefore, placing perl as
 a middle child in relation to \emph{writability}.
 
 \begin{figure}[!htp]
@@ -470,16 +443,16 @@ and C.
 \section{Prolog}
 
 \subsection{Prolog: Discussion}
-
-\subsection{Prolog: Reflection}
 Throughout my experience of programming I have only dealt with imperative languages
 hence, languages which you tell what is should do at each every single step.
 Prolog is a logical language whereby it's paradigm is that the programmer is
 going to specify the world's rules and the world's facts, and the language is
 going to make conclusions based on those rules and facts. Prolog is going to be
 based on the idea of a decision tree where it will use forward chaining and
-backwards chaining to form conclusions. For this reason writing the Prolog
+backwards chaining to form conclusions. For this reason writing the Prologa
 
+
+\subsection{Prolog: Reflection}
 
 \section{Scheme}
 
