@@ -29,13 +29,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7}scripting languages}{6}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}scripting languages: reflection}{6}{}%
+\contentsline {subsection}{\numberline {7.1}Scripting languages: discussion}{6}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {7.1.1}bash:}{6}{}%
+\contentsline {subsection}{\numberline {7.2}scripting languages: reflection}{6}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {7.1.2}ruby}{6}{}%
+\contentsline {subsection}{\numberline {7.3}Bash}{6}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {7.1.3}perl}{6}{}%
+\contentsline {subsubsection}{\numberline {7.3.1}Ruby}{6}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {7.3.2}Perl}{6}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {8}Small-talk}{7}{}%
 \defcounter {refsection}{0}\relax 
@@ -43,20 +45,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.2}Small-talk: Reflection}{7}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}C++}{7}{}%
+\contentsline {section}{\numberline {9}C++}{8}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.1}C++:Discussion}{7}{}%
+\contentsline {subsection}{\numberline {9.1}C++:Discussion}{8}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.2}C++: Reflection}{7}{}%
+\contentsline {subsection}{\numberline {9.2}C++: Reflection}{8}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}Prolog}{8}{}%
+\contentsline {section}{\numberline {10}Prolog}{9}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.1}Prolog: Discussion}{8}{}%
+\contentsline {subsection}{\numberline {10.1}Prolog: Discussion}{9}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.2}Prolog: Reflection}{8}{}%
+\contentsline {subsection}{\numberline {10.2}Prolog: Reflection}{9}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11}Scheme}{8}{}%
+\contentsline {section}{\numberline {11}Scheme}{9}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {11.1}Scheme: Discussion}{8}{}%
+\contentsline {subsection}{\numberline {11.1}Scheme: Discussion}{9}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {11.2}Scheme: Reflection}{8}{}%
+\contentsline {subsection}{\numberline {11.2}Scheme: Reflection}{9}{}%

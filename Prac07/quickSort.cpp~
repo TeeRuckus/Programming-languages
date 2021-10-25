@@ -91,7 +91,7 @@ void quickSortRec(Book *inBooks[], int leftIndx, int rightIndx)
 
     if (rightIndx > leftIndx)
     {
-        //middle selection pivot strategy
+        //middle selection pivot strategy 
         int midIndx  = (leftIndx + rightIndx) / 2;
         int newPivotIndx = doPartition(inBooks , leftIndx, rightIndx, midIndx);
 
